@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>武汉征信中心归集系统 | 消息服务</title>
+  <title>消息服务 | 武汉征信中心归集系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -18,10 +18,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect.
-  -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,27 +36,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">汇集系统</span>
+      <span class="logo-mini"><i class="fa fa-bank"></i></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">信用信息汇集系统</span>
+      <span class="logo-lg">信用信息归集系统</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">导航切换</span>
       </a>
       <ul class="nav navbar-nav">
-        <li><a href="./indicator.html"><i class="fa fa-bank"></i> 目录管理</a></li>
-        <li><a href="#"><i class="fa fa-database"></i> 数据管理</a></li>
-        <li><a href="#"><i class="fa fa-file-text-o"></i> 异议管理</a></li>
-        <li class="active"><a href="#"><i class="fa fa-gears"></i> 系统管理</a></li>
+        <li><a href="source.html"><i class="fa fa-bank"></i> 信用目录管理</a></li>
+        <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li><a href="#"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <li><a href="product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
+        <li class="active"><a href="messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
       </ul>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -78,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="#" class="btn btn-default btn-flat">修改密码</a>
                 </div>
                 <div class="pull-right">
-                  <a href="../index.html" class="btn btn-default btn-flat">退出系统</a>
+                  <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
                 </div>
               </li>
             </ul>
@@ -98,10 +95,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu">
         <li class="header">系统管理功能菜单</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-comments" style="color: green;"></i> <span>消息服务</span></a></li>
-        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>组织架构管理</span></a></li>
+        <li class="active"><a href="messages.html"><i class="fa fa-comments" style="color: green;"></i> <span>消息服务</span></a></li>
         <li><a href="#"><i class="fa fa-users" style="color: green;"></i> <span>角色管理</span></a></li>
         <li><a href="#"><i class="fa fa-user" style="color: green;"></i> <span>用户管理</span></a></li>
+        <li class="header">信用目录管理功能菜单</li>
+        <li><a href="source.html"><i class="fa fa-list" style="color: green;"></i> <span>数据源单位管理</span></a></li>
+        <li><a href="./catalog.html"><i class="fa fa-list" style="color: green;"></i> <span>目录事项管理</span></a></li>
+        <li><a href="indicator.html"><i class="fa fa-list" style="color: green;"></i> <span>目录数据项管理</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>报送周期管理</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>使用权限管理</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>二级目录管理</span></a></li>
+        <li class="header">数据报送管理功能菜单</li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>报送工具与流程管理</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>数据报送规范</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>数据存放目录结构</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+        <li class="header">信用信息发布功能菜单</li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>市级平台发布</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>区级平台发布</span></a></li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>数据上报</span></a></li>
+        <li class="header">征信产品定制功能菜单</li>
+        <li><a href="#"><i class="fa fa-list" style="color: green;"></i> <span>征信产品定制</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -113,44 +127,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header" style="border-bottom: 1px solid silver;">
       <h1>
-        <i class="fa fa-comments"></i> 消息服务
+        <i class="fa fa-comments"></i> 消息服务 change it！
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
 
-      <div class="direct-chat-messages">
-                <!-- Message. Default to the left -->
-                <div class="direct-chat-msg">
-                  <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">系统管理员</span>
-                    <span class="direct-chat-timestamp pull-right">2016年3月1日 上午10:08</span>
-                  </div>
-                  <!-- /.direct-chat-info -->
-                  <img class="direct-chat-img" src="../images/adminlte/avatar04.png" alt="Message User Image"><!-- /.direct-chat-img -->
-                  <div class="direct-chat-text">
-                    贵单位上个报送周期的数据尚未上传，请尽快提供。谢谢！
-                  </div>
-                  <!-- /.direct-chat-text -->
-                </div>
-                <!-- /.direct-chat-msg -->
-
-                <!-- Message to the right -->
-                <div class="direct-chat-msg right">
-                  <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-right">信息提供员</span>
-                    <span class="direct-chat-timestamp pull-left">2016年3月1日 上午10:10</span>
-                  </div>
-                  <!-- /.direct-chat-info -->
-                  <img class="direct-chat-img" src="../images/adminlte/avatar5.png" alt="Message User Image"><!-- /.direct-chat-img -->
-                  <div class="direct-chat-text">
-                    好的，我们马上上传。
-                  </div>
-                  <!-- /.direct-chat-text -->
-                </div>
-                <!-- /.direct-chat-msg -->
-      </div>
+      <!-- ======== main content goes here======== -->
 
     </section>
     <!-- /.content -->

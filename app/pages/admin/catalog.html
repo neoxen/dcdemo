@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>武汉征信中心归集系统 | 指标管理</title>
+  <title>目录事项管理 | 武汉征信中心归集系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -42,7 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">汇集系统</span>
+      <span class="logo-mini"><i class="fa fa-bank"></i></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">信用信息汇集系统</span>
     </a>
@@ -55,15 +55,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <span class="sr-only">Toggle navigation</span>
       </a>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./indicator.html"><i class="fa fa-bank"></i> 目录管理</a></li>
-        <li><a href="#"><i class="fa fa-database"></i> 数据管理</a></li>
-        <li><a href="#"><i class="fa fa-file-text-o"></i> 异议管理</a></li>
-        <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
+        <li class="active"><a href="source.html"><i class="fa fa-bank"></i> 信用目录管理</a></li>
+        <li><a href="dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li><a href="#"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <li><a href="product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
+        <li><a href="messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
       </ul>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -81,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="#" class="btn btn-default btn-flat">修改密码</a>
                 </div>
                 <div class="pull-right">
-                  <a href="../index.html" class="btn btn-default btn-flat">退出系统</a>
+                  <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
                 </div>
               </li>
             </ul>
@@ -99,12 +100,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">目录管理功能菜单</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li><a href="./catalog.html"><i class="fa fa-bank"></i> <span>目录管理</span></a></li>
-        <li class="active"><a href="./indicator.html"><i class="fa fa-tasks"></i> <span>指标管理</span></a></li>
-        <li><a href="#"><i class="fa fa-file-excel-o"></i> <span>上报模板管理</span></a></li>
-        <li><a href="#"><i class="fa fa-file-pdf-o"></i> <span>产品管理</span></a></li>
+        <li class="header">信用目录管理功能菜单</li>
+        <li><a href="source.html"><i class="fa fa-bank" style="color: green;"></i> <span>数据源单位管理</span></a></li>
+        <li class="active"><a href="./catalog.html"><i class="fa fa-list" style="color: green;"></i> <span>目录事项管理</span></a></li>
+        <li><a href="indicator.html"><i class="fa fa-file-text" style="color: green;"></i> <span>目录数据项管理</span></a></li>
+        <li><a href="#"><i class="fa fa-calendar" style="color: green;"></i> <span>报送周期管理</span></a></li>
+        <li><a href="#"><i class="fa fa-warning" style="color: green;"></i> <span>使用权限管理</span></a></li>
+        <li><a href="#"><i class="fa fa-indent" style="color: green;"></i> <span>二级目录管理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -116,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        指标管理
+        <i class="fa fa-list"></i> 目录管理
       </h1>
     </section>
 
@@ -128,319 +130,319 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div style="visibility: hidden; border: none;" id='jqxTree'>
                 <ul>
                     <li id="Catalog" item-expanded='true'>
-                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                         <span item-title="true">信用目录</span>
                         <ul>
                             <li id="AA">
-                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
-                                <span item-title="true">AA-一般失信信息</span> 
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                <span item-title="true">AA-一般失信信息</span>
                                 <ul>
                                     <li id="jQWidgets">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政事项</span>
                                         <ul>
                                             <li id="Admin">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">交管</span> </li>
                                             <li id="Corporate">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">消防</span> </li>
                                             <li id="Finance">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">出入境</span> </li>
                                             <li id="Other">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">其他</span> </li>
                                         </ul>
                                     </li>
                                     <li id="Personal">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政处罚</span> </li>
                                 </ul>
                             </li>
                             <li id="AB">
-                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
-                                <span item-title="true">AB-一般信息</span> 
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                <span item-title="true">AB-一般信息</span>
                                 <ul>
                                     <li id="jQWidgets">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政事项</span>
                                         <ul>
                                             <li id="Admin">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">交管</span> </li>
                                             <li id="Corporate">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">消防</span> </li>
                                             <li id="Finance">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">出入境</span> </li>
                                             <li id="Other">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">其他</span> </li>
                                         </ul>
                                     </li>
                                     <li id="Personal">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政处罚</span> </li>
                                 </ul>
                             </li>
                             <li id="AC">
-                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
-                                <span item-title="true">AC-荣誉信息</span> 
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                <span item-title="true">AC-荣誉信息</span>
                                 <ul>
                                     <li id="jQWidgets">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政事项</span>
                                         <ul>
                                             <li id="Admin">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">交管</span> </li>
                                             <li id="Corporate">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">消防</span> </li>
                                             <li id="Finance">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">出入境</span> </li>
                                             <li id="Other">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">其他</span> </li>
                                         </ul>
                                     </li>
                                     <li id="Personal">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政处罚</span> </li>
                                 </ul>
                             </li>
                             <li id="Inbox">
-                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                 <span
                                     item-title="true">BA-失信信息</span>
                                 <ul>
                                     <li id="jQWidgets">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政事项</span>
                                         <ul>
                                             <li id="Admin">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">交管</span> </li>
                                             <li id="Corporate">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">消防</span> </li>
                                             <li id="Finance">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">出入境</span> </li>
                                             <li id="Other">
-                                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                     item-title="true">其他</span> </li>
                                         </ul>
                                     </li>
                                     <li id="Personal">
-                                        <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                             item-title="true">行政处罚</span> </li>
                                 </ul>
                             </li>
                             <li id="Deleted Items">
-                                <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                     item-title="true"> BB-一般信息</span>
                                 <ul>
                                     <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB01-分类监管信息</span>
                                       <ul>
                                           <li id="jQWidgets">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政事项</span>
                                               <ul>
                                                   <li id="Admin">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">交管</span> </li>
                                                   <li id="Corporate">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">消防</span> </li>
                                                   <li id="Finance">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">出入境</span> </li>
                                                   <li id="Other">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">其他</span> </li>
                                               </ul>
                                           </li>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政处罚</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB02-行政许可信息</span>
                                       <ul>
                                           <li id="jQWidgets">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政事项</span>
                                               <ul>
                                                   <li id="Admin">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">交管</span> </li>
                                                   <li id="Corporate">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">消防</span> </li>
                                                   <li id="Finance">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">出入境</span> </li>
                                                   <li id="Other">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">其他</span> </li>
                                               </ul>
                                           </li>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政处罚</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB03-登记/注册/备案信息</span>
                                       <ul>
                                           <li id="jQWidgets">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政事项</span>
                                               <ul>
                                                   <li id="Admin">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">交管</span> </li>
                                                   <li id="Corporate">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">消防</span> </li>
                                                   <li id="Finance">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">出入境</span> </li>
                                                   <li id="Other">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">其他</span> </li>
                                               </ul>
                                           </li>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政处罚</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB05-资格证书信息</span>
                                       <ul>
                                           <li id="jQWidgets">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政事项</span>
                                               <ul>
                                                   <li id="Admin">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">交管</span> </li>
                                                   <li id="Corporate">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">消防</span> </li>
                                                   <li id="Finance">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">出入境</span> </li>
                                                   <li id="Other">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">其他</span> </li>
                                               </ul>
                                           </li>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政处罚</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB06-专项或周期性检验/检测/检查信息</span>
                                       <ul>
                                           <li id="jQWidgets">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政事项</span>
                                               <ul>
                                                   <li id="Admin">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">交管</span> </li>
                                                   <li id="Corporate">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">消防</span> </li>
                                                   <li id="Finance">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">出入境</span> </li>
                                                   <li id="Other">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">其他</span> </li>
                                               </ul>
                                           </li>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政处罚</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB07-社会保障信息</span>
                                       <ul>
                                           <li id="jQWidgets">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政事项</span>
                                               <ul>
                                                   <li id="Admin">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">交管</span> </li>
                                                   <li id="Corporate">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">消防</span> </li>
                                                   <li id="Finance">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">出入境</span> </li>
                                                   <li id="Other">
-                                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                           item-title="true">其他</span> </li>
                                               </ul>
                                           </li>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
                                                   item-title="true">行政处罚</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB08-身份信息</span>
                                       <ul>
                                           <li id="BB08001-户政类登记">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/settings.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png' /><span
                                                   item-title="true">BB08001-户政类登记</span> </li>
                                       </ul>
                                   </li>
                                   <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BB09-执业注册信息</span>
                                       <ul>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/settings.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png' /><span
                                                   item-title="true">BB08001-户政类登记</span> </li>
                                       </ul>
                                   </li>
                                 </ul>
                             </li>
                             <li id="Inbox">
-                                      <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/folder.png' />
+                                      <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
                                       <span
                                           item-title="true">BC-荣誉信息</span>
                                       <ul>
                                           <li id="Personal">
-                                              <img style='float: left; margin-right: 5px;' src='../images/jqwidgets/settings.png' /><span
+                                              <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png' /><span
                                                   item-title="true">BB08001-户政类登记</span> </li>
                                       </ul>
                                   </li>
@@ -449,7 +451,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </ul>
             </div>
         </div>
-        <div id="ContentPanel" style="overflow: auto;margin: 5px;">
+        <div id="ContentPanel" style="overflow: auto;margin-left: 5px;">
           <div id='jqxWidget' style="font-size: 12px; font-family: Verdana; float: left;">
 
             <div class="box box-success box-solid">
@@ -514,7 +516,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxexpander.js"></script>
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
 
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script> 
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxmenu.js"></script>
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.js"></script>
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.sort.js"></script>
@@ -781,7 +783,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   { text: '数据存储格式', datafield: 'storeFormat'}
               ]
         });
-        
+
         $('#jqxTree').on('select', function (event) {
             $("#indicatorList").text("【" + event.args.element.id + "】" + "指标信息列表");
             $("#indicatorDetailList").text("【" + event.args.element.id + "】" + "指标项信息列表");
