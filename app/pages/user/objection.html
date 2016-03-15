@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>异议与差错数据处理 | 武汉征信中心归集系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.metro.css" type="text/css"/>
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><i class="fa fa-bank"></i></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">信用信息汇集系统</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <ul class="nav navbar-nav">
+        <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
+        <li class="active"><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
+        <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
+      </ul>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <i class="fa fa-user"></i>
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">部门用户(市教育局)</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">修改密码</a>
+                </div>
+                <div class="pull-right">
+                  <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">数据报送管理功能菜单</li>
+        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
+        <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
+        <li class="active"><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-archive"></i> 异议与差错数据处理
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+
+      <div id="ContentPanel" style="overflow: auto;margin: 5px;">
+        <div id='jqxWidget' style="font-size: 12px; font-family: Verdana; float: left;width: 98%;">
+
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">异议与差错数据处理列表</h3>
+            </div>
+            <!-- /.box-header -->
+
+            <div class="box-body">
+
+              <table id="tempList" border="1">
+                <thead>
+                <tr>
+                  <th align="left">ReportCode</th>
+                  <th align="left">WrongIndicator</th>
+                  <th align="left">AssumeWrong</th>
+                  <th align="left">AssumeRight</th>
+                  <th align="right">Status</th>
+                  <th align="right">ModifiedDate</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="WS20151101500800002">
+                  <td>WS20151101500800002</td>
+                  <td>姓名</td>
+                  <td>张广义</td>
+                  <td>张光义</td>
+                  <td>已处理</td>
+                  <td>2015-11-05</td>
+                </tr>
+                <tr id="WS20151101500800013">
+                  <td>WS20151101500800013</td>
+                  <td>身份证号</td>
+                  <td>42010319901125321</td>
+                  <td>420103199011253219</td>
+                  <td>已处理</td>
+                  <td>2015-11-05</td>
+                </tr>
+                <tr id="WS20151109500800433">
+                  <td>WS20151109500800433</td>
+                  <td>身份证号</td>
+                  <td>420102198305033320</td>
+                  <td>420102198805033320</td>
+                  <td>已处理</td>
+                  <td>2015-11-13</td>
+                </tr>
+                <tr id="WS20151215100400045">
+                  <td>WS20151215100400045</td>
+                  <td>婚姻状态</td>
+                  <td>未婚</td>
+                  <td>已婚</td>
+                  <td>待处理</td>
+                  <td>2015-12-28</td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">异议与差错数据处理申请</h3>
+            </div>
+            <!-- /.box-header -->
+
+
+            <form class="form-horizontal">
+              <div class="box-body" style="margin-left: 20px;">
+
+                <div class="form-group">
+                  <label for="ReportCode" class="control-label">报告编号</label>
+                  <div class="input-group">
+                    <input id="ReportCode" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="WrongIndicator" class="control-label">异议数据项</label>
+                  <div class="input-group">
+                    <input id="WrongIndicator" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="AssumeWrong" class="control-label">认定错误值</label>
+                  <div class="input-group">
+                    <input id="AssumeWrong" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="AssumeRight" class="control-label">认定正确值</label>
+                  <div class="input-group">
+                    <input id="AssumeRight" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 20px; width: 50%;">
+                  <label>备注说明</label>
+                  <textarea class="form-control" rows="3" placeholder="需要说明的情况"></textarea>
+                </div>
+
+
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer" style="width: 50%;">
+                <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
+                <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 提交申请</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      技术支持 <i class="fa fa-phone-square"></i>027-85766650-407
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 武汉征信中心</strong>
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.1.4 -->
+<script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/bower_components/AdminLTE/dist/js/app.min.js"></script>
+
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatatable.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxinput.js"></script>
+<script type="text/javascript" src="../../scripts/main.js"></script>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $("#tempList").jqxDataTable(
+      {
+        altRows: true,
+        sortable: true,
+        editable: true,
+        selectionMode: 'singleRow',
+        columns: [
+          { text: '报告编号', dataField: 'ReportCode', width: 200 },
+          { text: '异议数据项', dataField: 'WrongIndicator', width: 100 },
+          { text: '认定错误值', dataField: 'AssumeWrong', width: 160 },
+          { text: '认定正确值', dataField: 'AssumeRight', width: 160 },
+          { text: '当前状态', dataField: 'Status', width: 80, align: 'right', cellsAlign: 'right' },
+          { text: '受理/处理时间', dataField: 'ModifiedDate', width: 100, align: 'right', cellsAlign: 'right' }
+        ]
+      });
+
+
+
+    var templateList = [
+      { "columnID": "1", "columnName": "行政相对人名称", "columnType": "文本","columnOrder": "1"},
+      { "columnID": "2", "columnName": "行政相对人代码", "columnType": "文本","columnOrder": "2"},
+      { "columnID": "3", "columnName": "项目名称", "columnType": "文本","columnOrder": "3"},
+      { "columnID": "4", "columnName": "审批类别",  "columnType": "文本","columnOrder": "4"},
+      { "columnID": "5", "columnName": "许可编号", "columnType": "文本","columnOrder": "5"},
+      { "columnID": "6", "columnName": "许可内容",  "columnType": "文本","columnOrder": "6"},
+      { "columnID": "7", "columnName": "许可生效期", "columnType": "日期","columnOrder": "7"},
+      { "columnID": "8", "columnName": "学科截止期",  "columnType": "日期","columnOrder": "8"},
+      { "columnID": "9", "columnName": "许可机关",  "columnType": "文本","columnOrder": "9"},
+      { "columnID": "10", "columnName": "当前状态",  "columnType": "文本","columnOrder": "10"},
+      { "columnID": "11", "columnName": "地方编码",  "columnType": "文本","columnOrder": "11"},
+      { "columnID": "12", "columnName": "数据更新时间戳", "columnType": "日期","columnOrder": "12"},
+      { "columnID": "13", "columnName": "备注",  "columnType": "文本","columnOrder": "13"}
+    ];
+
+    var templateSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'columnID', type: 'int' },
+        { name: 'columnName', type: 'string' },
+        { name: 'ShipName', type: 'string' },
+        { name: 'ShipAddress', type: 'string' },
+        { name: 'ShipCity', type: 'string' },
+        { name: 'columnType', type: 'string' },
+        { name: 'columnOrder', type: 'int' }
+      ],
+      id: 'columnID',
+      localdata: templateList,
+      addRow: function (rowID, rowData, position, commit) {
+        // synchronize with the server - send insert command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        // you can pass additional argument to the commit callback which represents the new ID if it is generated from a DB.
+        commit(true);
+      },
+      updateRow: function (rowID, rowData, commit) {
+        // synchronize with the server - send update command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        commit(true);
+      },
+      deleteRow: function (rowID, commit) {
+        // synchronize with the server - send delete command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        commit(true);
+      }
+    };
+
+    var dataAdapter = new $.jqx.dataAdapter(templateSource, {
+      loadComplete: function () {
+        // data is loaded.
+      }
+    });
+    $("#table").jqxDataTable(
+      {
+        width: 600,
+//        source: dataAdapter,
+
+        pageable: true,
+        editable: true,
+        showToolbar: true,
+        altRows: true,
+        ready: function()
+        {
+          // called when the DataTable is loaded.
+        },
+        pagerButtonsCount: 8,
+        toolbarHeight: 35,
+        renderToolbar: function(toolBar)
+        {
+          var toTheme = function (className) {
+            if (theme == "") return className;
+            return className + " " + className + "-" + theme;
+          }
+          // appends buttons to the status bar.
+          var container = $("<div style='overflow: hidden; position: relative; height: 100%; width: 100%;'></div>");
+          var buttonTemplate = "<div style='float: left; padding: 3px; margin: 2px;'><div style='margin: 4px; width: 16px; height: 16px;'></div></div>";
+          var addButton = $(buttonTemplate);
+          var editButton = $(buttonTemplate);
+          var deleteButton = $(buttonTemplate);
+          var cancelButton = $(buttonTemplate);
+          var updateButton = $(buttonTemplate);
+          container.append(addButton);
+          container.append(editButton);
+          container.append(deleteButton);
+          container.append(cancelButton);
+          container.append(updateButton);
+          toolBar.append(container);
+          addButton.jqxButton({cursor: "pointer", enableDefault: false,  height: 25, width: 25 });
+          addButton.find('div:first').addClass(toTheme('jqx-icon-plus'));
+          addButton.jqxTooltip({ position: 'bottom', content: "Add"});
+          editButton.jqxButton({ cursor: "pointer", disabled: true, enableDefault: false,  height: 25, width: 25 });
+          editButton.find('div:first').addClass(toTheme('jqx-icon-edit'));
+          editButton.jqxTooltip({ position: 'bottom', content: "Edit"});
+          deleteButton.jqxButton({ cursor: "pointer", disabled: true, enableDefault: false,  height: 25, width: 25 });
+          deleteButton.find('div:first').addClass(toTheme('jqx-icon-delete'));
+          deleteButton.jqxTooltip({ position: 'bottom', content: "Delete"});
+          updateButton.jqxButton({ cursor: "pointer", disabled: true, enableDefault: false,  height: 25, width: 25 });
+          updateButton.find('div:first').addClass(toTheme('jqx-icon-save'));
+          updateButton.jqxTooltip({ position: 'bottom', content: "Save Changes"});
+          cancelButton.jqxButton({ cursor: "pointer", disabled: true, enableDefault: false,  height: 25, width: 25 });
+          cancelButton.find('div:first').addClass(toTheme('jqx-icon-cancel'));
+          cancelButton.jqxTooltip({ position: 'bottom', content: "Cancel"});
+          var updateButtons = function (action) {
+            switch (action) {
+              case "Select":
+                addButton.jqxButton({ disabled: false });
+                deleteButton.jqxButton({ disabled: false });
+                editButton.jqxButton({ disabled: false });
+                cancelButton.jqxButton({ disabled: true });
+                updateButton.jqxButton({ disabled: true });
+                break;
+              case "Unselect":
+                addButton.jqxButton({ disabled: false });
+                deleteButton.jqxButton({ disabled: true });
+                editButton.jqxButton({ disabled: true });
+                cancelButton.jqxButton({ disabled: true });
+                updateButton.jqxButton({ disabled: true });
+                break;
+              case "Edit":
+                addButton.jqxButton({ disabled: true });
+                deleteButton.jqxButton({ disabled: true });
+                editButton.jqxButton({ disabled: true });
+                cancelButton.jqxButton({ disabled: false });
+                updateButton.jqxButton({ disabled: false });
+                break;
+              case "End Edit":
+                addButton.jqxButton({ disabled: false });
+                deleteButton.jqxButton({ disabled: false });
+                editButton.jqxButton({ disabled: false });
+                cancelButton.jqxButton({ disabled: true });
+                updateButton.jqxButton({ disabled: true });
+                break;
+            }
+          }
+          var rowIndex = null;
+          $("#table").on('rowSelect', function (event) {
+            var args = event.args;
+            rowIndex = args.index;
+            updateButtons('Select');
+          });
+          $("#table").on('rowUnselect', function (event) {
+            updateButtons('Unselect');
+          });
+          $("#table").on('rowEndEdit', function (event) {
+            updateButtons('End Edit');
+          });
+          $("#table").on('rowBeginEdit', function (event) {
+            updateButtons('Edit');
+          });
+          addButton.click(function (event) {
+            if (!addButton.jqxButton('disabled')) {
+              // add new empty row.
+              $("#table").jqxDataTable('addRow', null, {}, 'first');
+              // select the first row and clear the selection.
+              $("#table").jqxDataTable('clearSelection');
+              $("#table").jqxDataTable('selectRow', 0);
+              // edit the new row.
+              $("#table").jqxDataTable('beginRowEdit', 0);
+              updateButtons('add');
+            }
+          });
+          cancelButton.click(function (event) {
+            if (!cancelButton.jqxButton('disabled')) {
+              // cancel changes.
+              $("#table").jqxDataTable('endRowEdit', rowIndex, true);
+            }
+          });
+          updateButton.click(function (event) {
+            if (!updateButton.jqxButton('disabled')) {
+              // save changes.
+              $("#table").jqxDataTable('endRowEdit', rowIndex, false);
+            }
+          });
+          editButton.click(function () {
+            if (!editButton.jqxButton('disabled')) {
+              $("#table").jqxDataTable('beginRowEdit', rowIndex);
+              updateButtons('edit');
+            }
+          });
+          deleteButton.click(function () {
+            if (!deleteButton.jqxButton('disabled')) {
+              $("#table").jqxDataTable('deleteRow', rowIndex);
+              updateButtons('delete');
+            }
+          });
+        },
+        columns: [
+          { text: '字段编号',  dataField: 'columnID', width: 100 },
+          { text: '字段名称', dataField: 'columnName',  cellsAlign: 'right', align: 'right'},
+          {
+            text: '字段类型', dataField: 'columnType', cellsAlign: 'right', align: 'right', width: 100,
+            columnType: 'custom',
+            createEditor: function (row, cellValue, editor, width, height) {
+              // create jqxInput editor.
+              var textBox = $("<input style='padding-left: 4px; box-sizing: border-box; -moz-box-sizing: border-box; border: none;'/>").appendTo(editor);;
+              var countries = new Array("文本", "日期", "数字");
+              textBox.jqxInput({ source: countries, width: '100%', height: '100%' });
+              textBox.val(cellValue);
+            },
+            initEditor: function (row, cellValue, editor) {
+              // set jqxInput editor's initial value.
+              editor.find('input').val(cellValue);
+            },
+            getEditorValue: function (index, value, editor) {
+              // get jqxInput editor's value.
+              return editor.find('input').val();
+            }
+          },
+          { text: '字段排序', dataField: 'columnOrder', cellsAlign: 'right', align: 'right', width: 80}
+        ]
+      });
+
+  });
+</script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
+</html>
+
+
