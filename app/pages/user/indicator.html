@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-file-text"></i> 指标管理
+        <i class="fa fa-file-text"></i> 目录数据项管理
       </h1>
     </section>
 
@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="box box-success">
               <div class="box-header with-border">
-                <h3 id="indicatorList" class="box-title">指标信息列表</h3>
+                <h3 id="indicatorList" class="box-title">目录事项信息</h3>
                 <!-- /.box-tools -->
               </div>
               <!-- /.box-header -->
@@ -143,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="box box-success">
               <div class="box-header with-border">
-                <h3 id="indicatorDetailList" class="box-title">指标项信息列表</h3>
+                <h3 id="indicatorDetailList" class="box-title">目录数据项信息</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -219,9 +219,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     var dataIndicator = new Array();
     var dataIndicatorDetails = new Array();
 
-    var indicatorTypeCode = ["BB08001"];
-    var indicatorCode = ["B07024"];
-    var indicatorName = ["户口登记"];
+    var indicatorTypeCode = ["BC01001"];
+    var indicatorCode = ["B04007"];
+    var indicatorName = ["武汉市名校长评审认定"];
     var indicatorStructure = ["多项"];
     var reportSign = ["信用报告项"];
     var publishSign = ["允许披露"];
@@ -231,11 +231,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     var indicatorCodes = ["B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024"];
     var detailCode = ["A01001","A01002","A01003","A01004","A01005","A01006","A01007","A01008","A01009","A01010","A01011"];
-    var detailName = ["姓名","证件名称","证件号码","性别","出生日期","家庭住址","婚姻状况","是否党员","是否服兵役","学历","联系电话"];
+    var detailName = ["姓名","证件名称","证件号码","性别","认定日期","认定文号","认定内容","工作单位","职务","学历","联系电话"];
     var storeType = ["","","","","","","","","","",""];
     var storeLocation = ["ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01"];
     var storeProperty = ["a01001","a01002","a01003","a01004","a01005","a01006","a01007","a01008","a01009","a01010","a01011"];
-    var storeFormat = ["字符串","字符串","字符串","字符串","日期","字符串","字符串","字符串","字符串","字符串","字符串",];
+    var storeFormat = ["字符串","字符串","字符串","字符串","日期","字符串","字符串","字符串","字符串","字符串","字符串"];
     var codeName = ["","","","","","","","","","",""];
     var detailEnglishDesc = ["","","","","","","","","","",""];
     var detailRemark = ["","","","","","","","","","",""];
@@ -463,8 +463,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       });
 
     $('#creditCatalogTree').on('select', function (event) {
-      $("#indicatorList").text("【" + event.args.element.id + "】" + "指标信息列表");
-      $("#indicatorDetailList").text("【" + event.args.element.id + "】" + "指标项信息列表");
       $("#indicatorGrid").jqxGrid('source', dataAdapterIndicator);
       $("#indicatorDetailsGrid").jqxGrid('source', dataAdapterIndicatorDetails);
     });

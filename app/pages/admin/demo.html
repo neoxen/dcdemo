@@ -3,248 +3,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title id='Description'>In this sample is demonstrated how to integrate jqxGrid with jqxSplitter</title>
-    <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+  <title id='Description'>In this sample is demonstrated how to integrate jqxGrid with jqxSplitter</title>
 
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css"/>
 
 </head>
 <body class='default'>
-    <div id="splitter">
-
-
-          <div id='jqxDateTimeInput'>
-          </div>
-          <br />
-          <div>
-            <div style='font-family: "Verdana", "sans-serif"; font-size: 13px;'>
-              Choose Culture</div>
-            <br />
-            <div id='jqxDropDownList'>
+  <div>
+    <div id="mainSplitter">
+        <div>
+          <div id='creditCatalogTree' style='visibility: hidden; float: left; margin-left: 0px;'></div>
+        </div>
+        <div id="ContentPanel">
+          <div id='secondSplitter'>
+              <div style='visibility: hidden; float: left; margin-left: 0px;' id="productTree">
+                <ul>
+                  <li>
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png'/>
+                    <span item-title="true">征信产品模板</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="box box-success">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">征信产品定制</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form class="form-horizontal">
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label for="itemName" class="col-sm-2 control-label">单位名称</label>
+                        <div class="input-group col-sm-9">
+                          <input id='itemName' type="text" class="form-control" />
+                      <span class="input-group-btn">
+                        <button id='Add' type="button" class="btn btn-success btn-flat" data-toggle="tooltip"
+                                data-placement="top" title="增加子项">
+                          <i class="fa fa-indent"></i></button>
+                        <button id='AddAfter' type="button" class="btn btn-success btn-flat" data-toggle="tooltip"
+                                data-placement="top" title="增加同级别项">
+                          <i class="fa fa-outdent"></i></button>
+                        <button id='Update' type="button" class="btn btn-success btn-flat" data-toggle="tooltip"
+                                data-placement="top" title="修改当前项">
+                          <i class="fa fa-refresh"></i></button>
+                        <button id='Remove' type="button" class="btn btn-success btn-flat" data-toggle="tooltip"
+                                data-placement="top" title="删除当前项">
+                          <i class="fa fa-remove"></i></button>
+                        <button id='CollapseAll' type="button" class="btn btn-success btn-flat" data-toggle="tooltip"
+                                data-placement="top" title="层级折叠">
+                          <i class="fa fa-compress"></i></button>
+                      </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                      <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
+                      <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 保存</button>
+                    </div>
+                    <!-- /.box-footer -->
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-
-        <div id="ContentPanel" style="overflow: scroll;">
-            <form id="Form">
-                <table style="margin-top: 20px; width: 100%; overflow: scroll;">
-                     <tr><td style="text-align:right;">Company Name:</td><td style="text-align:left;"><input type="text" id="CompanyName" /></td></tr>
-                     <tr><td style="text-align:right;">Contact Name:</td><td style="text-align:left;"><input type="text" id="ContactName" /></td></tr>
-                     <tr><td style="text-align:right;">Contact Title:</td><td style="text-align:left;"><input type="text" id="ContactTitle" /></td></tr>
-                     <tr><td style="text-align:right;">City:</td><td style="text-align:left;"><input type="text" id="City" /></td></tr>
-                     <tr><td style="text-align:right;">Country:</td><td style="text-align:left;"><input type="text" id="Country" /></td></tr>
-                     <tr><td></td><td style="padding-left: 35px; text-align: left;"><input value="Save" type="button" id="Save" /></td></tr>
-                </table>
-            </form>
         </div>
     </div>
-
+  </div>
     <script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/bower_components/AdminLTE/dist/js/app.min.js"></script>
+
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdragdrop.js"></script>
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxexpander.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
 
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcalendar.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtabs.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.columnsresize.js"></script>
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
     <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.js"></script>
+
+    <script type="text/javascript" src="../../scripts/main.js"></script>
+
 
     <script type="text/javascript">
       $(document).ready(function () {
-        var data = [
-          { "id": "2",
-            "parentid": "1",
-            "text": "Hot Chocolate",
-            "value": "$2.3",
-            "icon": "../../images/jqwidgets/folder.png"
-          }, {
-            "id": "3",
-            "parentid": "1",
-            "text": "Peppermint Hot Chocolate",
-            "value": "$2.3",
-            "icon": "../../images/jqwidgets/folder.png"
-          }, {
-            "id": "4",
-            "parentid": "1",
-            "text": "Salted Caramel Hot Chocolate",
-            "value": "$2.3",
-            "icon": "../../images/jqwidgets/folder.png"
-          }, {
-            "id": "5",
-            "parentid": "1",
-            "text": "White Hot Chocolate",
-            "value": "$2.3"
-          }, {
-            "text": "Chocolate Beverage",
-            "id": "1",
-            "parentid": "-1",
-            "value": "$2.3"
-          }, {
-            "id": "6",
-            "text": "Espresso Beverage",
-            "parentid": "-1",
-            "value": "$2.3"
-          }, {
-            "id": "7",
-            "parentid": "6",
-            "text": "Caffe Americano",
-            "value": "$2.3"
-          }, {
-            "id": "8",
-            "text": "Caffe Latte",
-            "parentid": "6",
-            "value": "$2.3"
-          }, {
-            "id": "9",
-            "text": "Caffe Mocha",
-            "parentid": "6",
-            "value": "$2.3"
-          }, {
-            "id": "10",
-            "text": "Cappuccino",
-            "parentid": "6",
-            "value": "$2.3"
-          }, {
-            "id": "11",
-            "text": "Pumpkin Spice Latte",
-            "parentid": "6",
-            "value": "$2.3"
-          }, {
-            "id": "12",
-            "text": "Frappuccino",
-            "parentid": "-1"
-          }, {
-            "id": "13",
-            "text": "Caffe Vanilla Frappuccino",
-            "parentid": "12",
-            "value": "$2.3"
-          }, {
-            "id": "15",
-            "text": "450 calories",
-            "parentid": "13",
-            "value": "$2.3"
-          }, {
-            "id": "16",
-            "text": "16g fat",
-            "parentid": "13",
-            "value": "$2.3"
-          }, {
-            "id": "17",
-            "text": "13g protein",
-            "parentid": "13",
-            "value": "$2.3"
-          }, {
-            "id": "14",
-            "text": "Caffe Vanilla Frappuccino Light",
-            "parentid": "12",
-            "value": "$2.3"
-          }]
 
-        // prepare the data
-        var source =
-        {
-          datatype: "json",
-          datafields: [
-            { name: 'id' },
-            { name: 'parentid' },
-            { name: 'text' },
-            { name: 'value' },
-            { name: 'icon'}
-          ],
-          id: 'id',
-          localdata: data
-        };
+        $(function () { $("[data-toggle='tooltip']").tooltip(); });
 
-        // create data adapter.
-        var dataAdapter = new $.jqx.dataAdapter(source);
-        // perform Data Binding.
-        dataAdapter.dataBind();
-        // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
-        // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
-        // specifies the mapping between the 'text' and 'label' fields.
-        var records = dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'text', map: 'label'}]);
-//            $('#jqxWidget').jqxTree({ source: records, width: '300px'});
-      });
+        $('#mainSplitter').jqxSplitter({ width: 900, height: 600, panels: [{ size: 300 }] });
+        $('#secondSplitter').jqxSplitter({ width: '100%', height: '100%', panels: [{ size: 300,collapsible: false }] });
 
-      // define available cultures
-      var availableCultures = ['Czech (Czech Republic)', 'German (Germany)', 'English (Canada)', 'English (United States)',
-        'French (France)', 'Italian (Italy)', 'Japanese (Japan)', 'Hebrew (Israel)', 'Russian (Russia)', 'Croatian (Croatia)',
-        'Sanskrit (India)', 'Chinese (China)'
-      ];
-      // create a jqxDateTimeInput.
-      $("#jqxDateTimeInput").jqxDateTimeInput({width: '250px', height: '25px', selectionMode: 'range', animationType: 'slide',culture: 'zh-CN'});
-      // create a ComboBox
-      $("#jqxDropDownList").jqxDropDownList({ source: availableCultures, selectedIndex: 3,  width: '200px', height: '25px' });
-      // set the culture.
-      $("#jqxDropDownList").on('select', function (event) {
-        var index = event.args.index;
-        switch (index) {
-          case 0:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.cs-CZ.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'cs-CZ' });
-            });
-            break;
-          case 1:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.de-DE.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'de-DE' });
-            });
-            break;
-          case 2:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.en-CA.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'en-CA' });
-            });
-            break;
-          case 3:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.en-US.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'en-US' });
-            });
-            break;
-          case 4:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.fr-FR.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'fr-FR' });
-            });
-            break;
-          case 5:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.it-IT.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'it-IT' });
-            });
-            break;
-          case 6:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.ja-JP.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'ja-JP' });
-            });
-            break;
-          case 7:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.he-IL.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'he-IL' });
-            });
-            break;
-          case 8:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.ru-RU.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'ru-RU' });
-            });
-            break;
-          case 9:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.hr-HR.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'hr' });
-            });
-            break;
-          case 10:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.sa-IN.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'sa-IN' });
-            });
-            break;
-          case 11:
-            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.zh-CN.js', function () {
-              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'zh-CN' });
-            });
-            break;
-        }
+        $('#creditCatalogTree').jqxTree({ source: creditCatalogRecords, width: '100%',height: '100%', allowDrag: true, allowDrop: false});
+        $('#creditCatalogTree').css('visibility', 'visible');
+
+        $('#productTree').jqxTree({ allowDrag: true, allowDrop: true, height: '100%', width: '100%',
+          dragEnd: function (item, dropItem, args, dropPosition, tree) {
+            if (item.label == "Forum")
+              return false;
+          }
+        });
+        $('#productTree').css('visibility', 'visible');
+
+        $("#creditCatalogTree, #productTree").on('dragStart', function (event) {
+          $("#dragStartLog").text("Drag Start: " + event.args.label);
+          $("#dragEndLog").text("");
+        });
+
+        $("#creditCatalogTree, #productTree").on('dragEnd', function (event) {
+          $("#dragEndLog").text("Drag End");
+          if (event.args.label) {
+            var ev = event.args.originalEvent;
+            var x = ev.pageX;
+            var y = ev.pageY;
+            if (event.args.originalEvent && event.args.originalEvent.originalEvent && event.args.originalEvent.originalEvent.touches) {
+              var touch = event.args.originalEvent.originalEvent.changedTouches[0];
+              x = touch.pageX;
+              y = touch.pageY;
+            }
+          }
+        });
+
+        // Add
+        $('#Add').click(function () {
+          var selectedItem = $('#productTree').jqxTree('selectedItem');
+
+          var itemName = $('#itemName').val();
+          if (itemName == '') { itemName = '未命名单位';}
+
+          if (selectedItem != null) {
+            // adds an item with label: 'item' as a child of the selected item. The last parameter determines whether to refresh the Tree or not.
+            // If you want to use the 'addTo' method in a loop, set the last parameter to false and call the 'render' method after the loop.
+            $('#productTree').jqxTree('addTo', {label: itemName}, selectedItem.element, false);
+            // update the tree.
+            $('#productTree').jqxTree('render');
+          }
+          else {
+            $('#productTree').jqxTree('addTo', {label: itemName}, null, false);
+            // update the tree.
+            $('#productTree').jqxTree('render');
+          }
+          $('#itemName').val('');
+        });
+
+        // Update
+        $('#Update').click(function () {
+          var selectedItem = $('#productTree').jqxTree('selectedItem');
+
+          var itemName = $('#itemName').val();
+          if (itemName == '') { itemName = '未命名单位';}
+
+          if (selectedItem != null) {
+            $('#productTree').jqxTree('updateItem', {label: itemName}, selectedItem.element);
+            // update the tree.
+            $('#productTree').jqxTree('render');
+          }
+          $('#itemName').val('');
+        });
+
+        // Add After
+        $('#AddAfter').click(function () {
+          var selectedItem = $('#productTree').jqxTree('selectedItem');
+
+          var itemName = $('#itemName').val();
+          if (itemName == '') { itemName = '未命名单位';}
+
+          if (selectedItem != null) {
+            $('#productTree').jqxTree('addAfter', {label: itemName}, selectedItem.element, false);
+            // update the tree.
+            $('#productTree').jqxTree('render');
+          }
+          $('#itemName').val('');
+        });
+
+        // Remove
+        $('#Remove').click(function () {
+          var selectedItem = $('#productTree').jqxTree('selectedItem');
+          if (selectedItem != null) {
+            // removes the selected item. The last parameter determines whether to refresh the Tree or not.
+            // If you want to use the 'removeItem' method in a loop, set the last parameter to false and call the 'render' method after the loop.
+            $('#productTree').jqxTree('removeItem', selectedItem.element, false);
+            // update the tree.
+            $('#productTree').jqxTree('render');
+          }
+        });
+
+        // Collapse All
+        $('#CollapseAll').click(function () {
+          $('#productTree').jqxTree('collapseAll');
+        });
       });
 
     </script>

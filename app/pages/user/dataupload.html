@@ -106,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">数据报送管理功能菜单</li>
         <li class="active"><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
         <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
-        <li><a href="#"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+        <li><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -135,27 +135,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul>
                   <li id="教师资格认定(高中阶段)">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教师资格认定(高中阶段)</span>
+                    <span item-title="true">B04001-教师资格认定(高中阶段)</span>
                   </li>
                   <li id="教育系统干部及骨干教师培训认定">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教育系统干部及骨干教师培训认定</span>
+                    <span item-title="true">B04002-教育系统干部及骨干教师培训认定</span>
                   </li>
                   <li id="教育系统录用高校毕业生的就职情况">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教育系统录用高校毕业生的就职情况</span>
+                    <span item-title="true">B04003-教育系统录用高校毕业生的就职情况</span>
                   </li>
                   <li id="教育类行政处罚">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教育类行政处罚</span>
+                    <span item-title="true">B04004-教育类行政处罚</span>
                   </li>
                   <li id="优秀青年教师评审认定">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">学科带头人/优秀青年教师评审认定</span>
+                    <span item-title="true">B04006-学科带头人/优秀青年教师评审认定</span>
                   </li>
                   <li id="武汉市名校长评审认定">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">武汉市名校长评审认定</span>
+                    <span item-title="true">B04007-武汉市名校长评审认定</span>
                   </li>
 
 
@@ -360,7 +360,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       var datapath = $('#dataUpload').val();
       $('#eventsPanel').jqxPanel('append', '<strong>' + '-----------------------------------------------------------------' + '</strong><br /> ');
       $('#eventsPanel').jqxPanel('append', '<strong>' + '报送完成' + '! </strong><br /> ');
-      $('#eventsPanel').jqxPanel('append', '<strong>' + '报送路径' + ': </strong> ' +
+      $('#eventsPanel').jqxPanel('append', '<strong>' + '报送模板' + ': </strong> ' +
         datapath + ';<br />');
       $('#eventsPanel').jqxPanel('append', '<strong>' + '已报送文件' + ':</strong> ' +
         fileName + ';<br />' + '<strong>文件大小: </strong>' + fileSize + ';<br />');
