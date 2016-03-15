@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>征信产品定制 | 武汉征信中心归集系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><i class="fa fa-bank"></i></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">信用信息汇集系统</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <ul class="nav navbar-nav">
+        <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
+        <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <li class="active"><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
+        <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
+      </ul>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <i class="fa fa-user"></i>
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">部门用户(市教育局)</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">修改密码</a>
+                </div>
+                <div class="pull-right">
+                  <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">征信产品定制功能菜单</li>
+        <li class="active"><a href="./product.html"><i class="fa fa-check-square-o" style="color: green;"></i> <span>征信产品定制</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-check-square-o"></i> 征信产品定制
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div id="splitter">
+        <div>
+          <div style="visibility: hidden; border: none;" id='jqxTree'>
+            <ul>
+              <li id="Catalog" item-expanded='true'>
+                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                <span item-title="true">信用目录</span>
+                <ul>
+                  <li id="AA">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                    <span item-title="true">AA-一般失信信息</span>
+                    <ul>
+                      <li id="jQWidgets">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政事项</span>
+                        <ul>
+                          <li id="Admin">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">交管</span> </li>
+                          <li id="Corporate">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">消防</span> </li>
+                          <li id="Finance">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">出入境</span> </li>
+                          <li id="Other">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">其他</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Personal">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政处罚</span> </li>
+                    </ul>
+                  </li>
+                  <li id="AB">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                    <span item-title="true">AB-一般信息</span>
+                    <ul>
+                      <li id="jQWidgets">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政事项</span>
+                        <ul>
+                          <li id="Admin">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">交管</span> </li>
+                          <li id="Corporate">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">消防</span> </li>
+                          <li id="Finance">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">出入境</span> </li>
+                          <li id="Other">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">其他</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Personal">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政处罚</span> </li>
+                    </ul>
+                  </li>
+                  <li id="AC">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                    <span item-title="true">AC-荣誉信息</span>
+                    <ul>
+                      <li id="jQWidgets">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政事项</span>
+                        <ul>
+                          <li id="Admin">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">交管</span> </li>
+                          <li id="Corporate">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">消防</span> </li>
+                          <li id="Finance">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">出入境</span> </li>
+                          <li id="Other">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">其他</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Personal">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政处罚</span> </li>
+                    </ul>
+                  </li>
+                  <li id="Inbox">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                <span
+                                  item-title="true">BA-失信信息</span>
+                    <ul>
+                      <li id="jQWidgets">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政事项</span>
+                        <ul>
+                          <li id="Admin">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">交管</span> </li>
+                          <li id="Corporate">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">消防</span> </li>
+                          <li id="Finance">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">出入境</span> </li>
+                          <li id="Other">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">其他</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Personal">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                        item-title="true">行政处罚</span> </li>
+                    </ul>
+                  </li>
+                  <li id="Deleted Items">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                    item-title="true"> BB-一般信息</span>
+                    <ul>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB01-分类监管信息</span>
+                        <ul>
+                          <li id="jQWidgets">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政事项</span>
+                            <ul>
+                              <li id="Admin">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">交管</span> </li>
+                              <li id="Corporate">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">消防</span> </li>
+                              <li id="Finance">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">出入境</span> </li>
+                              <li id="Other">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">其他</span> </li>
+                            </ul>
+                          </li>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政处罚</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB02-行政许可信息</span>
+                        <ul>
+                          <li id="jQWidgets">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政事项</span>
+                            <ul>
+                              <li id="Admin">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">交管</span> </li>
+                              <li id="Corporate">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">消防</span> </li>
+                              <li id="Finance">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">出入境</span> </li>
+                              <li id="Other">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">其他</span> </li>
+                            </ul>
+                          </li>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政处罚</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB03-登记/注册/备案信息</span>
+                        <ul>
+                          <li id="jQWidgets">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政事项</span>
+                            <ul>
+                              <li id="Admin">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">交管</span> </li>
+                              <li id="Corporate">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">消防</span> </li>
+                              <li id="Finance">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">出入境</span> </li>
+                              <li id="Other">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">其他</span> </li>
+                            </ul>
+                          </li>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政处罚</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB05-资格证书信息</span>
+                        <ul>
+                          <li id="jQWidgets">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政事项</span>
+                            <ul>
+                              <li id="Admin">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">交管</span> </li>
+                              <li id="Corporate">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">消防</span> </li>
+                              <li id="Finance">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">出入境</span> </li>
+                              <li id="Other">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">其他</span> </li>
+                            </ul>
+                          </li>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政处罚</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB06-专项或周期性检验/检测/检查信息</span>
+                        <ul>
+                          <li id="jQWidgets">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政事项</span>
+                            <ul>
+                              <li id="Admin">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">交管</span> </li>
+                              <li id="Corporate">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">消防</span> </li>
+                              <li id="Finance">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">出入境</span> </li>
+                              <li id="Other">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">其他</span> </li>
+                            </ul>
+                          </li>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政处罚</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB07-社会保障信息</span>
+                        <ul>
+                          <li id="jQWidgets">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政事项</span>
+                            <ul>
+                              <li id="Admin">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">交管</span> </li>
+                              <li id="Corporate">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">消防</span> </li>
+                              <li id="Finance">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">出入境</span> </li>
+                              <li id="Other">
+                                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                                item-title="true">其他</span> </li>
+                            </ul>
+                          </li>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' /><span
+                            item-title="true">行政处罚</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB08-身份信息</span>
+                        <ul>
+                          <li id="BB08001-户政类登记">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png' /><span
+                            item-title="true">BB08001-户政类登记</span> </li>
+                        </ul>
+                      </li>
+                      <li id="Inbox">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BB09-执业注册信息</span>
+                        <ul>
+                          <li id="Personal">
+                            <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png' /><span
+                            item-title="true">BB08001-户政类登记</span> </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="Inbox">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png' />
+                                      <span
+                                        item-title="true">BC-荣誉信息</span>
+                    <ul>
+                      <li id="Personal">
+                        <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png' /><span
+                        item-title="true">BB08001-户政类登记</span> </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="ContentPanel" style="overflow: auto;margin: 5px;">
+          <div id='jqxWidget' style="font-size: 12px; font-family: Verdana; float: left;">
+
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <h3 id="indicatorList" class="box-title">指标信息列表</h3>
+                <!-- /.box-tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div id="indicatorGrid"></div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <h3 id="indicatorDetailList" class="box-title">指标项信息列表</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div id="indicatorDetailsGrid"></div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div><!-- jqxWidget -->
+        </div>
+      </div>
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      技术支持 <i class="fa fa-phone-square"></i>027-85766650-407
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 武汉征信中心</strong>
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.1.4 -->
+<script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/bower_components/AdminLTE/dist/js/app.min.js"></script>
+
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxexpander.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
+
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.sort.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.filter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.selection.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtabs.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.pager.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    // Create jqxTree
+    $("#splitter").jqxSplitter({  width: 900, height: 600, panels: [{ size: 300}, { size: 600 }] });
+    $('#jqxTree').jqxTree({  height: '100%', width: '100%', hasThreeStates: true, checkboxes: true, });
+    $('#jqxTree').css('visibility', 'visible');
+
+    // prepare the data
+    var dataIndicator = new Array();
+    var dataIndicatorDetails = new Array();
+
+    var indicatorTypeCode = ["BB08001"];
+    var indicatorCode = ["B07024"];
+    var indicatorName = ["户口登记"];
+    var indicatorStructure = ["多项"];
+    var reportSign = ["信用报告项"];
+    var publishSign = ["允许披露"];
+    var sharingSign = ["允许披露"];
+    var englishDesc = [""];
+    var remark = [""];
+
+    var indicatorCodes = ["B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024","B07024"];
+    var detailCode = ["A01001","A01002","A01003","A01004","A01005","A01006","A01007","A01008","A01009","A01010","A01011"];
+    var detailName = ["姓名","证件名称","证件号码","性别","出生日期","家庭住址","婚姻状况","是否党员","是否服兵役","学历","联系电话"];
+    var storeType = ["","","","","","","","","","",""];
+    var storeLocation = ["ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01","ods_a01"];
+    var storeProperty = ["a01001","a01002","a01003","a01004","a01005","a01006","a01007","a01008","a01009","a01010","a01011"];
+    var storeFormat = ["字符串","字符串","字符串","字符串","日期","字符串","字符串","字符串","字符串","字符串","字符串",];
+    var codeName = ["","","","","","","","","","",""];
+    var detailEnglishDesc = ["","","","","","","","","","",""];
+    var detailRemark = ["","","","","","","","","","",""];
+    var notes = ["无","无","无","无","无","无","无","无","无","无","无"];
+
+    var j = 0;
+    for (var i = 0; i < indicatorTypeCode.length; i++) {
+      var row = {};
+      row["indicatorTypeCode"] = indicatorTypeCode[j];
+      row["indicatorCode"] = indicatorCode[j];
+      row["indicatorName"] = indicatorName[j];
+      row["indicatorStructure"] = indicatorStructure[j];
+      row["reportSign"] = reportSign[j];
+      row["publishSign"] = publishSign[j];
+      row["sharingSign"] = sharingSign[j];
+      row["englishDesc"] = englishDesc[j];
+      row["remark"] = remark[j];
+      row["notes"] = notes[j];
+      dataIndicator[i] = row;
+      j++;
+    }
+
+    var k = 0;
+    for (var i = 0; i < indicatorCodes.length; i++) {
+      var row = {};
+      row["indicatorCodes"] = indicatorCodes[k];
+      row["detailCode"] = detailCode[k];
+      row["detailName"] = detailName[k];
+      row["storeType"] = storeType[k];
+      row["storeLocation"] = storeLocation[k];
+      row["storeProperty"] = storeProperty[k];
+      row["storeFormat"] = storeFormat[k];
+      row["codeName"] = codeName[k];
+      row["detailEnglishDesc"] = detailEnglishDesc[k];
+      row["detailRemark"] = detailRemark[k];
+      row["notes"] = notes[k];
+      dataIndicatorDetails[i] = row;
+      k++;
+    }
+
+    var sourceIndicator =
+    {
+      localdata: dataIndicator,
+      datatype: "array",
+      pager: function (pagenum, pagesize, oldpagenum) {
+        // callback called when a page or page size is changed.
+      }
+    };
+
+    var sourceIndicatorDetails =
+    {
+      localdata: dataIndicatorDetails,
+      datatype: "array",
+      pager: function (pagenum, pagesize, oldpagenum) {
+        // callback called when a page or page size is changed.
+      }
+    };
+
+    var indicatorInfo = function (index, parentElement, gridElement, datarecord) {
+      var tabsdiv = null;
+      var information = null;
+      var notes = null;
+      tabsdiv = $($(parentElement).children()[0]);
+      if (tabsdiv != null) {
+        information = tabsdiv.find('.information');
+        notes = tabsdiv.find('.notes');
+        var title = tabsdiv.find('.title');
+        title.text(datarecord.indicatorName);
+
+        var container = $('<div style="margin: 5px;"></div>')
+        container.appendTo($(information));
+        // var photocolumn = $('<div style="float: left; width: 15%;"></div>');
+        var leftcolumn = $('<div style="float: left; width: 50%;"></div>');
+        var rightcolumn = $('<div style="float: left; width: 50%;"></div>');
+        // container.append(photocolumn);
+        container.append(leftcolumn);
+        container.append(rightcolumn);
+
+        // var photo = $("<div class='jqx-rc-all' style='margin: 10px;'><b>Photo:</b></div>");
+        // var image = $("<div style='margin-top: 10px;'></div>");
+        // var imgurl = '../../images/' + datarecord.firstname.toLowerCase() + '.png';
+        // var img = $('<img height="60" src="' + imgurl + '"/>');
+        // image.append(img);
+        // image.appendTo(photo);
+        // photocolumn.append(photo);
+
+        var indicatorTypeCode = "<div style='margin: 10px;'><b>指标分类代码：</b> " + datarecord.indicatorTypeCode + "</div>";
+        var indicatorName = "<div style='margin: 10px;'><b>指标名称：</b> " + datarecord.indicatorName + "</div>";
+        var indicatorStructure = "<div style='margin: 10px;'><b>组成结构：</b> " + datarecord.indicatorStructure + "</div>";
+        var publishSign = "<div style='margin: 10px;'><b>披露标志：</b> " + datarecord.publishSign + "</div>";
+        var remark = "<div style='margin: 10px;'><b>其他说明：</b> " + datarecord.remark + "</div>";
+        $(leftcolumn).append(indicatorTypeCode);
+        $(leftcolumn).append(indicatorName);
+        $(leftcolumn).append(indicatorStructure);
+        $(leftcolumn).append(publishSign);
+        $(leftcolumn).append(remark);
+
+        var indicatorCode = "<div style='margin: 10px;'><b>指标代码：</b> " + datarecord.indicatorCode + "</div>";
+        var englishDesc = "<div style='margin: 10px;'><b>英文描述：</b> " + datarecord.englishDesc + "</div>";
+        var reportSign = "<div style='margin: 10px;'><b>信用报告标志：</b> " + datarecord.reportSign + "</div>";
+        var sharingSign = "<div style='margin: 10px;'><b>行业开放标志：</b> " + datarecord.sharingSign + "</div>";
+
+        $(rightcolumn).append(indicatorCode);
+        $(rightcolumn).append(englishDesc);
+        $(rightcolumn).append(reportSign);
+        $(rightcolumn).append(sharingSign);
+
+        var notescontainer = $('<div style="white-space: normal; margin: 5px;"><span>' + datarecord.notes + '</span></div>');
+        $(notes).append(notescontainer);
+        $(tabsdiv).jqxTabs({ width: 520, height: 180});
+      }
+    };
+
+    var indicatorDetailsInfo = function (index, parentElement, gridElement, datarecord) {
+      var tabsdiv = null;
+      var information = null;
+      var notes = null;
+      tabsdiv = $($(parentElement).children()[0]);
+      if (tabsdiv != null) {
+        information = tabsdiv.find('.information');
+        notes = tabsdiv.find('.notes');
+        var title = tabsdiv.find('.title');
+        title.text(datarecord.detailName);
+
+        var container = $('<div style="margin: 5px;"></div>')
+        container.appendTo($(information));
+        // var photocolumn = $('<div style="float: left; width: 15%;"></div>');
+        var leftcolumn = $('<div style="float: left; width: 50%;"></div>');
+        var rightcolumn = $('<div style="float: left; width: 50%;"></div>');
+        // container.append(photocolumn);
+        container.append(leftcolumn);
+        container.append(rightcolumn);
+
+        // var photo = $("<div class='jqx-rc-all' style='margin: 10px;'><b>Photo:</b></div>");
+        // var image = $("<div style='margin-top: 10px;'></div>");
+        // var imgurl = '../../images/' + datarecord.firstname.toLowerCase() + '.png';
+        // var img = $('<img height="60" src="' + imgurl + '"/>');
+        // image.append(img);
+        // image.appendTo(photo);
+        // photocolumn.append(photo);
+
+        var indicatorCodes = "<div style='margin: 10px;'><b>指标代码：</b> " + datarecord.indicatorCodes + "</div>";
+        var detailName = "<div style='margin: 10px;'><b>指标项名称：</b> " + datarecord.detailName + "</div>";
+        var storeType = "<div style='margin: 10px;'><b>存储类型：</b> " + datarecord.storeType + "</div>";
+        var storeProperty = "<div style='margin: 10px;'><b>存储属性：</b> " + datarecord.storeProperty + "</div>";
+        var storeFormat = "<div style='margin: 10px;'><b>数据存储格式：</b> " + datarecord.storeFormat + "</div>";
+        $(leftcolumn).append(indicatorCodes);
+        $(leftcolumn).append(detailName);
+        $(leftcolumn).append(storeType);
+        $(leftcolumn).append(storeProperty);
+        $(leftcolumn).append(storeFormat);
+
+        var detailCode = "<div style='margin: 10px;'><b>指标项代码：</b> " + datarecord.detailCode + "</div>";
+        var detailEnglishDesc = "<div style='margin: 10px;'><b>英文描述：</b> " + datarecord.detailEnglishDesc + "</div>";
+        var storeLocation = "<div style='margin: 10px;'><b>存储位置：</b> " + datarecord.storeLocation + "</div>";
+        var codeName = "<div style='margin: 10px;'><b>代码名称：</b> " + datarecord.codeName + "</div>";
+        var detailRemark = "<div style='margin: 10px;'><b>其他说明：</b> " + datarecord.detailRemark + "</div>";
+        $(rightcolumn).append(detailCode);
+        $(rightcolumn).append(detailEnglishDesc);
+        $(rightcolumn).append(storeLocation);
+        $(rightcolumn).append(codeName);
+        $(rightcolumn).append(detailRemark);
+
+        var notescontainer = $('<div style="white-space: normal; margin: 5px;"><span>' + datarecord.notes + '</span></div>');
+        $(notes).append(notescontainer);
+        $(tabsdiv).jqxTabs({ width: 520, height: 180});
+      }
+    };
+
+    var dataAdapterIndicator = new $.jqx.dataAdapter(sourceIndicator);
+    var dataAdapterIndicatorDetails = new $.jqx.dataAdapter(sourceIndicatorDetails);
+
+    $("#indicatorGrid").jqxGrid(
+      {
+        width: 554,
+        height: 300,
+        // source: dataAdapter,
+        pageable: true,
+        // selectionmode: 'multiplerowsextended',
+        sortable: true,
+        rowdetails: true,
+        autoheight: true,
+        columnsresize: true,
+        rowdetailstemplate: { rowdetails: "<div style='margin: 10px;'><ul style='margin-left: 10px;'><li class='title'></li><li>备注</li></ul><div class='information'></div><div class='notes'></div></div>", rowdetailsheight: 200 },
+        ready: function () {
+          // $("#indicatorGrid").jqxGrid('showrowdetails', 0);
+          // $("#indicatorGrid").jqxGrid('showrowdetails', 1);
+        },
+        initrowdetails: indicatorInfo,
+        columns: [
+          { text: '指标代码', datafield: 'indicatorCode', width: 80 },
+          { text: '指标名称', datafield: 'indicatorName', width: 80 },
+          { text: '组成结构', datafield: 'indicatorStructure', width: 80 },
+          { text: '信用报告标志', datafield: 'reportSign', width: 80 },
+          { text: '披露标志', datafield: 'publishSign', width: 80},
+          { text: '行业开放标志', datafield: 'sharingSign'}
+        ]
+      });
+
+    $("#indicatorDetailsGrid").jqxGrid(
+      {
+        width: 554,
+        height: 300,
+        // source: dataAdapter,
+        pageable: true,
+        // selectionmode: 'multiplerowsextended',
+        sortable: true,
+        rowdetails: true,
+        autoheight: true,
+        columnsresize: true,
+        rowdetailstemplate: { rowdetails: "<div style='margin: 10px;'><ul style='margin-left: 10px;'><li class='title'></li><li>备注</li></ul><div class='information'></div><div class='notes'></div></div>", rowdetailsheight: 200 },
+        ready: function () {
+          // $("#indicatorDetailsGrid").jqxGrid('showrowdetails', 0);
+          // $("#indicatorDetailsGrid").jqxGrid('showrowdetails', 1);
+        },
+        initrowdetails: indicatorDetailsInfo,
+        columns: [
+          { text: '指标项代码', datafield: 'detailCode', width: 80 },
+          { text: '指标项名称', datafield: 'detailName', width: 80 },
+          { text: '存储类型', datafield: 'storeType', width: 80 },
+          { text: '存储位置', datafield: 'storeLocation', width: 80 },
+          { text: '存储属性', datafield: 'storeProperty', width: 80},
+          { text: '数据存储格式', datafield: 'storeFormat'}
+        ]
+      });
+
+    $('#jqxTree').on('select', function (event) {
+      $("#indicatorList").text("【" + event.args.element.id + "】" + "指标信息列表");
+      $("#indicatorDetailList").text("【" + event.args.element.id + "】" + "指标项信息列表");
+      $("#indicatorGrid").jqxGrid('source', dataAdapterIndicator);
+      $("#indicatorDetailsGrid").jqxGrid('source', dataAdapterIndicatorDetails);
+    });
+
+  });
+</script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
+</html>
+
+

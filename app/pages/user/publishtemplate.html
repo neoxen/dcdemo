@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>报送模板管理 | 武汉征信中心归集系统</title>
+  <title>信息发布模板管理 | 武汉征信中心归集系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -59,8 +59,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </a>
       <ul class="nav navbar-nav">
         <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
-        <li class="active"><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
-        <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li class="active"><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
         <li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
         <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
       </ul>
@@ -82,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">修改密码</a>
+                  <a href="./password.html" class="btn btn-default btn-flat">修改密码</a>
                 </div>
                 <div class="pull-right">
                   <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
@@ -103,10 +103,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">数据报送管理功能菜单</li>
-        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
-        <li class="active"><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
-        <li><a href="#"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+        <li class="header">信用信息发布功能菜单</li>
+        <li><a href="./publish.html"><i class="fa fa-database" style="color: green;"></i> <span>信用信息发布</span></a></li>
+        <li class="active"><a href="./publishtemplate.html"><i class="fa fa-file-text" style="color: green;"></i> <span>信息发布模板管理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -118,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-file-text"></i> 报送模板管理
+        <i class="fa fa-file-text"></i> 信息发布模板管理
       </h1>
     </section>
 
@@ -131,7 +130,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">报送模板列表</h3>
+              <h3 class="box-title">信息发布模板列表</h3>
             </div>
             <!-- /.box-header -->
 
@@ -141,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead>
                 <tr>
                   <th align="left">Name</th>
-                  <th align="left">Period</th>
+                  <th align="left">Target</th>
                   <th align="left">FileType</th>
                   <th align="right">SeparateSign</th>
                   <th align="right">ModifiedDate</th>
@@ -150,42 +149,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <tbody>
                 <tr id="教师资格认定(高中阶段)">
                   <td>教师资格认定(高中阶段)</td>
-                  <td>每年</td>
+                  <td>网站发布</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
                   <td>教育系统干部及骨干教师培训认定</td>
-                  <td>每年</td>
+                  <td>网站发布</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
                   <td>教育系统录用高校毕业生的就职情况</td>
-                  <td>每年</td>
+                  <td>省级报送</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
                   <td>教育类行政处罚</td>
-                  <td>每月</td>
+                  <td>省级报送</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
                   <td>优秀青年教师评审认定</td>
-                  <td>每年</td>
+                  <td>市级报送</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
                   <td>武汉市名校长评审认定</td>
-                  <td>每年</td>
+                  <td>市级报送</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
@@ -199,7 +198,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">报送模板维护</h3>
+              <h3 class="box-title">信息发布模板维护</h3>
             </div>
             <!-- /.box-header -->
 
@@ -324,7 +323,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         selectionMode: 'singleRow',
         columns: [
           { text: '模板名称', dataField: 'Name', width: 300 },
-          { text: '报送周期', dataField: 'Period', width: 100 },
+          { text: '发布目的', dataField: 'Target', width: 100 },
           { text: '文件类型', dataField: 'FileType', width: 100 },
           { text: '分隔符号', dataField: 'SeparateSign', width: 100, align: 'right', cellsAlign: 'right' },
           { text: '生成/修改时间', dataField: 'ModifiedDate', width: 100, align: 'right', cellsAlign: 'right' }

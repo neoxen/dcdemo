@@ -6,141 +6,23 @@
     <title id='Description'>In this sample is demonstrated how to integrate jqxGrid with jqxSplitter</title>
     <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
 
-    <script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
-    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
-
-  <script type="text/javascript">
-          $(document).ready(function () {
-            var data = [
-              { "id": "2",
-                "parentid": "1",
-                "text": "Hot Chocolate",
-                "value": "$2.3",
-                "icon": "../../images/jqwidgets/folder.png"
-              }, {
-                "id": "3",
-                "parentid": "1",
-                "text": "Peppermint Hot Chocolate",
-                "value": "$2.3",
-                "icon": "../../images/jqwidgets/folder.png"
-              }, {
-                "id": "4",
-                "parentid": "1",
-                "text": "Salted Caramel Hot Chocolate",
-                "value": "$2.3",
-                "icon": "../../images/jqwidgets/folder.png"
-              }, {
-                "id": "5",
-                "parentid": "1",
-                "text": "White Hot Chocolate",
-                "value": "$2.3"
-              }, {
-                "text": "Chocolate Beverage",
-                "id": "1",
-                "parentid": "-1",
-                "value": "$2.3"
-              }, {
-                "id": "6",
-                "text": "Espresso Beverage",
-                "parentid": "-1",
-                "value": "$2.3"
-              }, {
-                "id": "7",
-                "parentid": "6",
-                "text": "Caffe Americano",
-                "value": "$2.3"
-              }, {
-                "id": "8",
-                "text": "Caffe Latte",
-                "parentid": "6",
-                "value": "$2.3"
-              }, {
-                "id": "9",
-                "text": "Caffe Mocha",
-                "parentid": "6",
-                "value": "$2.3"
-              }, {
-                "id": "10",
-                "text": "Cappuccino",
-                "parentid": "6",
-                "value": "$2.3"
-              }, {
-                "id": "11",
-                "text": "Pumpkin Spice Latte",
-                "parentid": "6",
-                "value": "$2.3"
-              }, {
-                "id": "12",
-                "text": "Frappuccino",
-                "parentid": "-1"
-              }, {
-                "id": "13",
-                "text": "Caffe Vanilla Frappuccino",
-                "parentid": "12",
-                "value": "$2.3"
-              }, {
-                "id": "15",
-                "text": "450 calories",
-                "parentid": "13",
-                "value": "$2.3"
-              }, {
-                "id": "16",
-                "text": "16g fat",
-                "parentid": "13",
-                "value": "$2.3"
-              }, {
-                "id": "17",
-                "text": "13g protein",
-                "parentid": "13",
-                "value": "$2.3"
-              }, {
-                "id": "14",
-                "text": "Caffe Vanilla Frappuccino Light",
-                "parentid": "12",
-                "value": "$2.3"
-              }]
-
-            // prepare the data
-            var source =
-            {
-              datatype: "json",
-              datafields: [
-                { name: 'id' },
-                { name: 'parentid' },
-                { name: 'text' },
-                { name: 'value' },
-                { name: 'icon'}
-              ],
-              id: 'id',
-              localdata: data
-            };
-
-            // create data adapter.
-            var dataAdapter = new $.jqx.dataAdapter(source);
-            // perform Data Binding.
-            dataAdapter.dataBind();
-            // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
-            // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
-            // specifies the mapping between the 'text' and 'label' fields.
-            var records = dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'text', map: 'label'}]);
-            $('#jqxWidget').jqxTree({ source: records, width: '300px'});
-          });
-
-    </script>
 </head>
 <body class='default'>
     <div id="splitter">
-        <div>
-            <div style="border: none;">
-              <div id='jqxWidget' />
-              </div>
-        </div>
+
+
+          <div id='jqxDateTimeInput'>
+          </div>
+          <br />
+          <div>
+            <div style='font-family: "Verdana", "sans-serif"; font-size: 13px;'>
+              Choose Culture</div>
+            <br />
+            <div id='jqxDropDownList'>
+            </div>
+          </div>
+
         <div id="ContentPanel" style="overflow: scroll;">
             <form id="Form">
                 <table style="margin-top: 20px; width: 100%; overflow: scroll;">
@@ -154,5 +36,217 @@
             </form>
         </div>
     </div>
+
+    <script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
+
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcalendar.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var data = [
+          { "id": "2",
+            "parentid": "1",
+            "text": "Hot Chocolate",
+            "value": "$2.3",
+            "icon": "../../images/jqwidgets/folder.png"
+          }, {
+            "id": "3",
+            "parentid": "1",
+            "text": "Peppermint Hot Chocolate",
+            "value": "$2.3",
+            "icon": "../../images/jqwidgets/folder.png"
+          }, {
+            "id": "4",
+            "parentid": "1",
+            "text": "Salted Caramel Hot Chocolate",
+            "value": "$2.3",
+            "icon": "../../images/jqwidgets/folder.png"
+          }, {
+            "id": "5",
+            "parentid": "1",
+            "text": "White Hot Chocolate",
+            "value": "$2.3"
+          }, {
+            "text": "Chocolate Beverage",
+            "id": "1",
+            "parentid": "-1",
+            "value": "$2.3"
+          }, {
+            "id": "6",
+            "text": "Espresso Beverage",
+            "parentid": "-1",
+            "value": "$2.3"
+          }, {
+            "id": "7",
+            "parentid": "6",
+            "text": "Caffe Americano",
+            "value": "$2.3"
+          }, {
+            "id": "8",
+            "text": "Caffe Latte",
+            "parentid": "6",
+            "value": "$2.3"
+          }, {
+            "id": "9",
+            "text": "Caffe Mocha",
+            "parentid": "6",
+            "value": "$2.3"
+          }, {
+            "id": "10",
+            "text": "Cappuccino",
+            "parentid": "6",
+            "value": "$2.3"
+          }, {
+            "id": "11",
+            "text": "Pumpkin Spice Latte",
+            "parentid": "6",
+            "value": "$2.3"
+          }, {
+            "id": "12",
+            "text": "Frappuccino",
+            "parentid": "-1"
+          }, {
+            "id": "13",
+            "text": "Caffe Vanilla Frappuccino",
+            "parentid": "12",
+            "value": "$2.3"
+          }, {
+            "id": "15",
+            "text": "450 calories",
+            "parentid": "13",
+            "value": "$2.3"
+          }, {
+            "id": "16",
+            "text": "16g fat",
+            "parentid": "13",
+            "value": "$2.3"
+          }, {
+            "id": "17",
+            "text": "13g protein",
+            "parentid": "13",
+            "value": "$2.3"
+          }, {
+            "id": "14",
+            "text": "Caffe Vanilla Frappuccino Light",
+            "parentid": "12",
+            "value": "$2.3"
+          }]
+
+        // prepare the data
+        var source =
+        {
+          datatype: "json",
+          datafields: [
+            { name: 'id' },
+            { name: 'parentid' },
+            { name: 'text' },
+            { name: 'value' },
+            { name: 'icon'}
+          ],
+          id: 'id',
+          localdata: data
+        };
+
+        // create data adapter.
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        // perform Data Binding.
+        dataAdapter.dataBind();
+        // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
+        // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
+        // specifies the mapping between the 'text' and 'label' fields.
+        var records = dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'text', map: 'label'}]);
+//            $('#jqxWidget').jqxTree({ source: records, width: '300px'});
+      });
+
+      // define available cultures
+      var availableCultures = ['Czech (Czech Republic)', 'German (Germany)', 'English (Canada)', 'English (United States)',
+        'French (France)', 'Italian (Italy)', 'Japanese (Japan)', 'Hebrew (Israel)', 'Russian (Russia)', 'Croatian (Croatia)',
+        'Sanskrit (India)', 'Chinese (China)'
+      ];
+      // create a jqxDateTimeInput.
+      $("#jqxDateTimeInput").jqxDateTimeInput({width: '250px', height: '25px', selectionMode: 'range', animationType: 'slide',culture: 'zh-CN'});
+      // create a ComboBox
+      $("#jqxDropDownList").jqxDropDownList({ source: availableCultures, selectedIndex: 3,  width: '200px', height: '25px' });
+      // set the culture.
+      $("#jqxDropDownList").on('select', function (event) {
+        var index = event.args.index;
+        switch (index) {
+          case 0:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.cs-CZ.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'cs-CZ' });
+            });
+            break;
+          case 1:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.de-DE.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'de-DE' });
+            });
+            break;
+          case 2:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.en-CA.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'en-CA' });
+            });
+            break;
+          case 3:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.en-US.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'en-US' });
+            });
+            break;
+          case 4:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.fr-FR.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'fr-FR' });
+            });
+            break;
+          case 5:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.it-IT.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'it-IT' });
+            });
+            break;
+          case 6:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.ja-JP.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'ja-JP' });
+            });
+            break;
+          case 7:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.he-IL.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'he-IL' });
+            });
+            break;
+          case 8:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.ru-RU.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'ru-RU' });
+            });
+            break;
+          case 9:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.hr-HR.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'hr' });
+            });
+            break;
+          case 10:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.sa-IN.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'sa-IN' });
+            });
+            break;
+          case 11:
+            $.getScript('/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.zh-CN.js', function () {
+              $("#jqxDateTimeInput").jqxDateTimeInput({ culture: 'zh-CN' });
+            });
+            break;
+        }
+      });
+
+    </script>
 </body>
 </html>
