@@ -375,7 +375,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
 
 
-    var indicators = [
+    var indicatorsPrincipal = [
       { "id": "1",  "text": "姓名", "type": "字符串" , "checked": true },
       { "id": "2",  "text": "证件名称", "type": "字符串", "checked": true},
       { "id": "3",  "text": "证件号码", "type": "字符串", "checked": true},
@@ -389,7 +389,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
       { "id": "11",  "text": "备注", "type": "字符串", "checked": true}
     ];
 
-    var indicatorsSource =
+    var indicatorsTeacher = [
+      { "id": "1",  "text": "事项名称", "type": "字符串" , "checked": true },
+      { "id": "2",  "text": "行政相对人", "type": "字符串", "checked": true},
+      { "id": "3",  "text": "社会信用代码", "type": "字符串", "checked": true},
+      { "id": "3",  "text": "组织机构代码", "type": "字符串", "checked": true},
+      { "id": "3",  "text": "工商注册代码", "type": "字符串", "checked": true},
+      { "id": "3",  "text": "税务机构代码", "type": "字符串", "checked": true},
+      { "id": "3",  "text": "身份证号码", "type": "字符串", "checked": true},
+      { "id": "4",  "text": "项目名称", "type": "字符串", "checked": true},
+      { "id": "5",  "text": "审批类别", "type": "字符串", "checked": true},
+      { "id": "6",  "text": "行政许可决定书文号", "type": "字符串", "checked": true},
+      { "id": "7",  "text": "许可内容", "type": "字符串", "checked": true},
+      { "id": "8",  "text": "许可生效期", "type": "日期", "checked": true},
+      { "id": "9",  "text": "许可截止期", "type": "日期", "checked": true},
+      { "id": "10",  "text": "许可机关", "type": "字符串", "checked": true},
+      { "id": "11",  "text": "当前状态", "type": "字符串", "checked": true},
+      { "id": "11",  "text": "地方编码", "type": "字符串", "checked": true},
+      { "id": "11",  "text": "数据更新时间戳", "type": "日期", "checked": true},
+      { "id": "11",  "text": "备注", "type": "字符串", "checked": true},
+      { "id": "11",  "text": "其他信息1", "type": "字符串", "checked": true},
+      { "id": "11",  "text": "其他信息2", "type": "字符串", "checked": true}
+    ];
+
+    var indicatorsPrincipalSource =
     {
       datatype: "json",
       datafields: [
@@ -399,16 +422,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
         { name: 'checked' ,type: 'bool'}
       ],
       id: 'id',
-      localdata: indicators
+      localdata: indicatorsPrincipal
     };
 
-    var indicatorsDataAdapter = new $.jqx.dataAdapter(indicatorsSource);
+    var indicatorsTeacherSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'id' },
+        { name: 'text' },
+        { name: 'type' },
+        { name: 'checked' ,type: 'bool'}
+      ],
+      id: 'id',
+      localdata: indicatorsTeacher
+    };
+
+    var indicatorsPrincipalDA = new $.jqx.dataAdapter(indicatorsPrincipalSource);
+    var indicatorsTeacherDA = new $.jqx.dataAdapter(indicatorsTeacherSource);
 //    indicatorsDataAdapter.dataBind();
 
     $("#indicatorsGrid").jqxGrid(
       {
         width: '100%',
-        source: indicatorsDataAdapter,
+//        source: indicatorsPrincipalDA,
         pageable: true,
         autoheight: true,
         sortable: true,
@@ -422,6 +459,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
           { text: '选择', datafield: 'checked', checkbox: true, columntype: 'checkbox', width: 50 }
         ]
       });
+
+    $('#productTree').on('itemClick', function (event) {
+      var args = event.args;
+      var item = $('#productTree').jqxTree('getItem', args.element);
+      var label = item.label;
+      if ( label.indexOf("B04007") >= 0 ) {
+        $("#indicatorsGrid").jqxGrid('source', indicatorsPrincipalDA);
+      } else
+      if ( label.indexOf("B04001") >= 0 ) {
+        $("#indicatorsGrid").jqxGrid('source', indicatorsTeacherDA);
+      } else {
+        $("#indicatorsGrid").jqxGrid('source', null);
+      }
+    });
 
 
   });
