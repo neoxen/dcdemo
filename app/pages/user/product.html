@@ -102,6 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu">
         <li class="header">征信产品定制功能菜单</li>
         <li class="active"><a href="./product.html"><i class="fa fa-check-square-o" style="color: green;"></i> <span>征信产品定制</span></a></li>
+        <li><a href="./productlist.html"><i class="fa fa-list" style="color: green;"></i> <span>征信产品管理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -167,36 +168,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
 
                     <div class="form-group">
-                      <div class="col-sm-offset-1 col-sm-11">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" checked="checked"> 信用报告项
-                          </label>
-                        </div>
+                      <label class="col-sm-4 control-label">报告类型</label>
+                      <div class="col-sm-8">
+                        <select class="form-control">
+                          <option>个人征信报告</option>
+                          <option>企业征信报告</option>
+                          <option>其他报告</option>
+                        </select>
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <div class="col-sm-offset-1 col-sm-11">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" checked="checked"> 披露标志
-                          </label>
-                        </div>
+                      <label class="col-sm-4 control-label">披露标志</label>
+                      <div class="col-sm-8">
+                        <select class="form-control">
+                          <option>允许披露</option>
+                          <option>不允许披露</option>
+                        </select>
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <div class="col-sm-offset-1 col-sm-11">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" checked="checked"> 行业开放标志
-                          </label>
-                        </div>
+                      <label class="col-sm-4 control-label">行业开放</label>
+                      <div class="col-sm-8">
+                        <select class="form-control">
+                          <option>允许披露</option>
+                          <option>不允许披露</option>
+                        </select>
                       </div>
                     </div>
 
                     <div id="indicatorsGrid"></div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                      <label for="note" class="col-sm-4 control-label">备注</label>
+
+                      <div class="col-sm-8">
+                        <textarea class="form-control" rows="3" id="note" placeholder="备注"></textarea>
+                      </div>
+                    </div>
 
                   </div>
                   <!-- /.box-body -->
@@ -437,6 +447,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       id: 'id',
       localdata: indicatorsTeacher
     };
+
+
 
     var indicatorsPrincipalDA = new $.jqx.dataAdapter(indicatorsPrincipalSource);
     var indicatorsTeacherDA = new $.jqx.dataAdapter(indicatorsTeacherSource);

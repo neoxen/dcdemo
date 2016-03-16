@@ -243,6 +243,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                   <label>目录事项</label>
                   <select id="indicatorSelector" class="form-control" style="width: 40%;">
+                    <option value="" selected="true" disabled="true">请选择信息发布事项</option>
                     <option value="B04001">教师资格认定(高中阶段)</option>
                     <option value="B04002">教育系统干部及骨干教师培训认定</option>
                     <option value="B04003">教育系统录用高校毕业生的就职情况</option>
@@ -367,33 +368,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       { "columnID": "11",  "columnName": "备注", "columnType": "字符串", "columnOrder": "11"}
     ];
 
-    var nullList = [];
-    var nullSource =
-    {
-      datatype: "json",
-      datafields: [
-        { name: 'columnID', type: 'int' },
-        { name: 'columnName' , type: 'string'},
-        { name: 'columnType' , type: 'string'},
-        { name: 'columnOrder', type: 'int'}
-      ],
-      id: 'id',
-      localdata: nullList,
-      addRow: function (rowID, rowData, position, commit) {
-        commit(true);
-      },
-      updateRow: function (rowID, rowData, commit) {
-        commit(true);
-      },
-      deleteRow: function (rowID, commit) {
-        commit(true);
-      }
-    };
-    var nullDA = new $.jqx.dataAdapter(nullSource, {
-      loadComplete: function () {
-        // data is loaded.
-      }
-    });
+
 
     var indicatorsPrincipalSource =
     {
@@ -404,7 +379,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         { name: 'columnType' , type: 'string'},
         { name: 'columnOrder', type: 'int'}
       ],
-      id: 'id',
+      id: 'columnID',
       localdata: indicatorsPrincipal,
       addRow: function (rowID, rowData, position, commit) {
         // synchronize with the server - send insert command
@@ -649,6 +624,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
         $('#tempName').val("教师资格认定(高中阶段)");
         $("#table").jqxDataTable({source: dataAdapter});
       });
+
+    var nullList = [
+      { "columnID": "1",  "columnName": "姓名", "columnType": "字符串" , "columnOrder": "1" },
+      { "columnID": "2",  "columnName": "工作单位", "columnType": "字符串", "columnOrder": "2"},
+      { "columnID": "3",  "columnName": "评选事迹", "columnType": "字符串", "columnOrder": "3"},
+      { "columnID": "4",  "columnName": "评选日期", "columnType": "日期", "columnOrder": "4"},
+      { "columnID": "5",  "columnName": "认定文号", "columnType": "字符串", "columnOrder": "5"},
+      { "columnID": "6",  "columnName": "数据更新时间戳", "columnType": "日期", "columnOrder": "6"},
+      { "columnID": "7",  "columnName": "备注", "columnType": "字符串", "columnOrder": "7"}
+    ];
+    var nullSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'columnID', type: 'int' },
+        { name: 'columnName' , type: 'string'},
+        { name: 'columnType' , type: 'string'},
+        { name: 'columnOrder', type: 'int'}
+      ],
+      id: 'columnID',
+      localdata: nullList,
+      addRow: function (rowID, rowData, position, commit) {
+        commit(true);
+      },
+      updateRow: function (rowID, rowData, commit) {
+        commit(true);
+      },
+      deleteRow: function (rowID, commit) {
+        commit(true);
+      }
+    };
+    var nullDA = new $.jqx.dataAdapter(nullSource, {
+      loadComplete: function () {
+        // data is loaded.
+      }
+    });
 
     $('#indicatorSelector').on('change',
       function (event)
