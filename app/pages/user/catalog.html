@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><i class="fa fa-bank"></i></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">信用信息汇集系统</span>
+      <span class="logo-lg">信用信息归集系统</span>
     </a>
 
     <!-- Header Navbar -->
@@ -148,18 +148,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form class="form-horizontal" style="width: 90%;">
                 <div class="box-body">
                   <div class="form-group">
-                    <label for="applyLocation" class="col-sm-3 control-label">目录事项路径</label>
+                    <label for="applyLocation" class="col-sm-3 control-label">待维护事项</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="applyLocation" placeholder="目录事项路径">
+                      <input type="text" class="form-control" id="applyLocation" placeholder="请选择待维护事项或路径">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="itemName" class="col-sm-3 control-label">目录事项名称</label>
+                    <label for="itemName" class="col-sm-3 control-label">拟事项名称</label>
 
                     <div class="col-sm-9">
-                      <input type="email" class="form-control" id="itemName" placeholder="目录事项名称">
+                      <input type="email" class="form-control" id="itemName" placeholder="拟维护事项名称或路径">
                     </div>
                   </div>
 
@@ -207,9 +207,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <label class="col-sm-3 control-label">维护类型</label>
                     <div class="col-sm-9">
                       <select class="form-control" style="width: 30%;">
-                        <option>新增</option>
-                        <option>修改</option>
-                        <option>删除</option>
+                        <option>新增子项</option>
+                        <option>修改当前项</option>
+                        <option>删除当前项</option>
                       </select>
                     </div>
                   </div>
@@ -399,8 +399,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ]
       });
 
-    $('#creditCatalogTree').on('select', function (event) {
-
+    $('#creditCatalogTree').on('itemClick', function (event) {
+      var args = event.args;
+      var item = $('#creditCatalogTree').jqxTree('getItem', args.element);
+      var label = item.label;
+      var icon = item.icon;
+      if ( icon.indexOf("folder") >= 0 ) {
+        $("#applyLocation").val(label);
+      } else {
+        $("#applyLocation").val("");
+      }
     });
 
   });
