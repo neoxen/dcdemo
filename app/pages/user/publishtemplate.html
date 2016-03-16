@@ -214,15 +214,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
 
                 <div class="form-group">
-                  <label>报送周期</label>
-                  <select class="form-control" style="width: 20%;">
-                    <option>每年</option>
-                    <option>每半年</option>
-                    <option>每季度</option>
-                    <option>每月</option>
-                    <option>每周</option>
-                    <option>其他</option>
-                  </select>
+                  <label for="reportTo" class="control-label">发布目的</label>
+                  <div class="input-group">
+                    <input id="reportTo" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -245,7 +240,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
 
-
+                <div class="form-group">
+                  <label>目录事项</label>
+                  <select id="indicatorSelector" class="form-control" style="width: 40%;">
+                    <option value="B04001">教师资格认定(高中阶段)</option>
+                    <option value="B04002">教育系统干部及骨干教师培训认定</option>
+                    <option value="B04003">教育系统录用高校毕业生的就职情况</option>
+                    <option value="B04004">其他(教育类行政处罚)</option>
+                    <option value="B04006">优秀青年教师评审认定</option>
+                    <option value="B04007">武汉市名校长评审认定</option>
+                  </select>
+                </div>
 
                 <div class="form-group">
                   <label>模板字段</label>
@@ -348,15 +353,86 @@ scratch. This page gets rid of all links and provides the needed markup only.
       { "columnID": "13", "columnName": "备注",  "columnType": "文本","columnOrder": "13"}
     ];
 
+    var indicatorsPrincipal = [
+      { "columnID": "1",  "columnName": "姓名", "columnType": "字符串" , "columnOrder": "1" },
+      { "columnID": "2",  "columnName": "证件名称", "columnType": "字符串", "columnOrder": "2"},
+      { "columnID": "3",  "columnName": "证件号码", "columnType": "字符串", "columnOrder": "3"},
+      { "columnID": "4",  "columnName": "认定日期", "columnType": "日期", "columnOrder": "4"},
+      { "columnID": "5",  "columnName": "认定文号", "columnType": "字符串", "columnOrder": "5"},
+      { "columnID": "6",  "columnName": "认定内容", "columnType": "字符串", "columnOrder": "6"},
+      { "columnID": "7",  "columnName": "工作单位", "columnType": "字符串", "columnOrder": "7"},
+      { "columnID": "8",  "columnName": "职务", "columnType": "字符串", "columnOrder": "8"},
+      { "columnID": "9",  "columnName": "学历", "columnType": "字符串", "columnOrder": "9"},
+      { "columnID": "10",  "columnName": "联系电话", "columnType": "字符串", "columnOrder": "10"},
+      { "columnID": "11",  "columnName": "备注", "columnType": "字符串", "columnOrder": "11"}
+    ];
+
+    var nullList = [];
+    var nullSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'columnID', type: 'int' },
+        { name: 'columnName' , type: 'string'},
+        { name: 'columnType' , type: 'string'},
+        { name: 'columnOrder', type: 'int'}
+      ],
+      id: 'id',
+      localdata: nullList,
+      addRow: function (rowID, rowData, position, commit) {
+        commit(true);
+      },
+      updateRow: function (rowID, rowData, commit) {
+        commit(true);
+      },
+      deleteRow: function (rowID, commit) {
+        commit(true);
+      }
+    };
+    var nullDA = new $.jqx.dataAdapter(nullSource, {
+      loadComplete: function () {
+        // data is loaded.
+      }
+    });
+
+    var indicatorsPrincipalSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'columnID', type: 'int' },
+        { name: 'columnName' , type: 'string'},
+        { name: 'columnType' , type: 'string'},
+        { name: 'columnOrder', type: 'int'}
+      ],
+      id: 'id',
+      localdata: indicatorsPrincipal,
+      addRow: function (rowID, rowData, position, commit) {
+        // synchronize with the server - send insert command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        // you can pass additional argument to the commit callback which represents the new ID if it is generated from a DB.
+        commit(true);
+      },
+      updateRow: function (rowID, rowData, commit) {
+        // synchronize with the server - send update command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        commit(true);
+      },
+      deleteRow: function (rowID, commit) {
+        // synchronize with the server - send delete command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        commit(true);
+      }
+    };
+
     var templateSource =
     {
       datatype: "json",
       datafields: [
         { name: 'columnID', type: 'int' },
         { name: 'columnName', type: 'string' },
-        { name: 'ShipName', type: 'string' },
-        { name: 'ShipAddress', type: 'string' },
-        { name: 'ShipCity', type: 'string' },
         { name: 'columnType', type: 'string' },
         { name: 'columnOrder', type: 'int' }
       ],
@@ -388,12 +464,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         // data is loaded.
       }
     });
+
+    var indicatorsPrincipalDA = new $.jqx.dataAdapter(indicatorsPrincipalSource, {
+      loadComplete: function () {
+        // data is loaded.
+      }
+    });
+
     $("#table").jqxDataTable(
       {
         width: 600,
 //        source: dataAdapter,
 
         pageable: true,
+        sortable: true,
         editable: true,
         showToolbar: true,
         altRows: true,
@@ -565,6 +649,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
         $('#tempName').val("教师资格认定(高中阶段)");
         $("#table").jqxDataTable({source: dataAdapter});
       });
+
+    $('#indicatorSelector').on('change',
+      function (event)
+      {
+        // event args.
+        var args = event.args;
+
+        if ($('#indicatorSelector').val().indexOf("B04001") >= 0){
+          $("#table").jqxDataTable({source: dataAdapter});
+        } else if ($('#indicatorSelector').val().indexOf("B04007") >= 0) {
+          $("#table").jqxDataTable({source: indicatorsPrincipalDA});
+        } else {
+          $("#table").jqxDataTable({source: nullDA});
+        }
+
+
+      });
+
+
   });
 </script>
 
