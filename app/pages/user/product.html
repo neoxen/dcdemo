@@ -26,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
   <link rel="stylesheet" href="/bower_components/intro.js/introjs.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/intro.js/themes/introjs-nassim.css" type="text/css" />
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -118,7 +119,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <section class="content-header">
       <h1>
         <i class="fa fa-check-square-o"></i> 征信产品定制
-        <small>通过拖拽方式定义征信产品模板 <a class="btn btn-xs btn-success" href="javascript:void(0);" onclick="startIntro();"> <i class="fa fa-question-circle"></i> 使用帮助</a></small>
+        <small>通过拖拽方式定义征信产品模板 <button id="helpButton" class="btn btn-xs btn-success"> <i class="fa fa-question-circle"></i> 使用帮助</button></small>
       </h1>
     </section>
 
@@ -126,9 +127,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <section class="content">
 
       <div id="mainSplitter">
-        <div>
-          <div id='creditCatalogTree'></div>
-        </div>
+
+          <div id="creditCatalogTree"></div>
+
         <div id="ContentPanel">
           <div id='secondSplitter'>
             <div id="productTree">
@@ -491,12 +492,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       }
     });
 
-
-
-
-  });
-
-  function startIntro(){
     var intro = introJs();
     intro.setOptions({
       steps: [
@@ -506,7 +501,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         {
           element: '#creditCatalogTree',
           intro: '从左边的信用目录树中选择并拖拽报告所需的目录事项,',
-          position: 'right'
+          position: 'left'
         },
         {
           element: '#productTree',
@@ -515,29 +510,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
         },
         {
           element: document.querySelectorAll('.form-group')[0],
-          intro: "这里可以对产品模板树做相关操作,",
+          intro: "然后对产品模板树做增加/修改/删除等相关操作,构建完整的模板结构",
           position: 'left'
         },
         {
           element: '#productProperties',
-          intro: '填写和选择相关属性,',
-          position: 'bottom'
+          intro: '此处可选择相关属性,',
+          position: 'left'
         },
         {
           element: '#indicatorsGrid',
-          intro: '从产品目录树中选择事项,即可从事项信息项中选择所需要的字段,',
-          position: 'bottom'
+          intro: '从产品目录树中选择事项,然后从事项信息项中选择所需要的字段,',
+          position: 'left'
         },
         {
           element: '#saveButton',
           intro: '最后,点击保存按钮保存产品定制配置信息,系统管理人员将为您制作出产品模板.',
-          position: 'bottom'
+          position: 'left'
         }
       ]
     });
 
-    intro.start();
-  }
+    $('#helpButton').on('click', function (event) {
+      intro.start();
+    });
+
+
+  });
+
 
 </script>
 
