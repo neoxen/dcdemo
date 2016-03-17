@@ -25,6 +25,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
 
   <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/intro.js/introjs.css" type="text/css" />
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -116,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <section class="content-header">
       <h1>
         <i class="fa fa-check-square-o"></i> 征信产品定制
-        <small>通过拖拽方式定义征信产品模板</small>
+        <small>通过拖拽方式定义征信产品模板 <a class="btn btn-xs btn-success" href="javascript:void(0);" onclick="startIntro();"> <i class="fa fa-question-circle"></i> 使用帮助</a></small>
       </h1>
     </section>
 
@@ -125,11 +127,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <div id="mainSplitter">
         <div>
-          <div id='creditCatalogTree' style='visibility: hidden; float: left; margin-left: 0px;'></div>
+          <div id='creditCatalogTree'></div>
         </div>
         <div id="ContentPanel">
           <div id='secondSplitter'>
-            <div style='visibility: hidden; float: left; margin-left: 0px;' id="productTree">
+            <div id="productTree">
               <ul>
                 <li>
                   <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png'/>
@@ -168,38 +170,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </span>
                       </div>
                     </div>
+                    <div id="productProperties">
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label">报告类型</label>
+                        <div class="col-sm-8">
+                          <select class="form-control">
+                            <option>信用报告</option>
+                            <option>数据分析报告</option>
+                            <option>其他报告</option>
+                          </select>
+                        </div>
+                      </div>
 
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label">报告类型</label>
-                      <div class="col-sm-8">
-                        <select class="form-control">
-                          <option>信用报告</option>
-                          <option>数据分析报告</option>
-                          <option>其他报告</option>
-                        </select>
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label">披露标志</label>
+                        <div class="col-sm-8">
+                          <select class="form-control">
+                            <option>允许披露</option>
+                            <option>不允许披露</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label">行业开放</label>
+                        <div class="col-sm-8">
+                          <select class="form-control">
+                            <option>允许披露</option>
+                            <option>不允许披露</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
-
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label">披露标志</label>
-                      <div class="col-sm-8">
-                        <select class="form-control">
-                          <option>允许披露</option>
-                          <option>不允许披露</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label">行业开放</label>
-                      <div class="col-sm-8">
-                        <select class="form-control">
-                          <option>允许披露</option>
-                          <option>不允许披露</option>
-                        </select>
-                      </div>
-                    </div>
-
                     <div id="indicatorsGrid"></div>
 
                     <div class="form-group" style="margin-top: 20px;">
@@ -214,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- /.box-body -->
                   <div class="box-footer">
                     <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
-                    <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 保存</button>
+                    <button id="saveButton" type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 保存</button>
                   </div>
                   <!-- /.box-footer -->
                 </form>
@@ -276,6 +278,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <script type="text/javascript" src="../../scripts/main.js"></script>
+<script type="text/javascript" src="/bower_components/intro.js/intro.js"></script>
 
 
 
@@ -489,7 +492,52 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
 
 
+
+
   });
+
+  function startIntro(){
+    var intro = introJs();
+    intro.setOptions({
+      steps: [
+        {
+          intro: "欢迎查看征信产品定制功能的使用帮助!"
+        },
+        {
+          element: '#creditCatalogTree',
+          intro: '从左边的信用目录树中选择并拖拽报告所需的目录事项,',
+          position: 'right'
+        },
+        {
+          element: '#productTree',
+          intro: "安放到右边的产品模板树中,",
+          position: 'left'
+        },
+        {
+          element: document.querySelectorAll('.form-group')[0],
+          intro: "这里可以对产品模板树做相关操作,",
+          position: 'left'
+        },
+        {
+          element: '#productProperties',
+          intro: '填写和选择相关属性,',
+          position: 'bottom'
+        },
+        {
+          element: '#indicatorsGrid',
+          intro: '从产品目录树中选择事项,即可从事项信息项中选择所需要的字段,',
+          position: 'bottom'
+        },
+        {
+          element: '#saveButton',
+          intro: '最后,点击保存按钮保存产品定制配置信息,系统管理人员将为您制作出产品模板.',
+          position: 'bottom'
+        }
+      ]
+    });
+
+    intro.start();
+  }
 
 </script>
 
