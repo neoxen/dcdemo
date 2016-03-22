@@ -7,26 +7,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>信用信息发布 | 武汉征信中心归集系统</title>
+  <title>数据报送管理 | 武汉征信中心归集系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect.
-  -->
-  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
 
-  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css"/>
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
   <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css"/>
   <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.metro.css" type="text/css"/>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="../../styles/main.css">
+  <!-- endbuild -->
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -59,8 +60,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </a>
       <ul class="nav navbar-nav">
         <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
-        <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
-        <li class="active"><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <li class="active"><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
         <li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
         <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
       </ul>
@@ -103,10 +104,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">信用信息发布功能菜单</li>
-        <li class="active"><a href="./publish.html"><i class="fa fa-share-square-o" style="color: green;"></i> <span>信用信息发布</span></a></li>
-        <li><a href="./publishtemplate.html"><i class="fa fa-file-text" style="color: green;"></i> <span>信息发布模板管理</span></a></li>
-        <li><a href="./publishtype.html"><i class="fa fa-sitemap" style="color: green;"></i> <span>信息发布方式管理</span></a></li>
+        <li class="header">数据报送管理功能菜单</li>
+        <li class="active"><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
+        <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
+        <li><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -118,7 +119,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-share-square-o"></i> 信用信息发布
+        <i class="fa fa-database"></i> 数据报送
       </h1>
     </section>
 
@@ -131,34 +132,46 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul>
               <li id="Catalog" item-expanded='true'>
                 <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png'/>
-                <span item-title="true">信息发布模板</span>
+                <span item-title="true">目录事项报送模板</span>
                 <ul>
                   <li id="教师资格认定(高中阶段)">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教师资格认定(高中阶段)</span>
+                    <span item-title="true">B04001-教师资格认定(高中阶段)</span>
                   </li>
                   <li id="教育系统干部及骨干教师培训认定">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教育系统干部及骨干教师培训认定</span>
+                    <span item-title="true">B04002-教育系统干部及骨干教师培训认定</span>
                   </li>
                   <li id="教育系统录用高校毕业生的就职情况">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教育系统录用高校毕业生的就职情况</span>
+                    <span item-title="true">B04003-教育系统录用高校毕业生的就职情况</span>
                   </li>
                   <li id="教育类行政处罚">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">教育类行政处罚</span>
+                    <span item-title="true">B04004-教育类行政处罚</span>
                   </li>
                   <li id="优秀青年教师评审认定">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">学科带头人/优秀青年教师评审认定</span>
+                    <span item-title="true">B04006-学科带头人/优秀青年教师评审认定</span>
                   </li>
                   <li id="武汉市名校长评审认定">
                     <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
-                    <span item-title="true">武汉市名校长评审认定</span>
+                    <span item-title="true">B04007-武汉市名校长评审认定</span>
                   </li>
-
-
+                </ul>
+              </li>
+              <li id="specialUpload" item-expanded='true'>
+                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png'/>
+                <span item-title="true">专项数据报送模板</span>
+                <ul>
+                  <li id="双公示">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
+                    <span item-title="true">行政双公示</span>
+                  </li>
+                  <li id="其他">
+                    <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/settings.png'/>
+                    <span item-title="true">其他</span>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -169,24 +182,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="box box-success">
               <div class="box-header with-border">
-                <h3 class="box-title">信用信息发布</h3>
+                <h3 class="box-title">数据报送</h3>
               </div>
               <!-- /.box-header -->
 
-              <form method="get">
               <div class="box-body">
 
                 <div id="navBar" style="width: 85%; margin-bottom: 20px;">
                   <ul>
-                    <li>1.选择信息发布模板</li>
-                    <li>2.选择信息发布属性</li>
-                    <li>3.发布信息</li>
+                    <li>1.选择数据报送模板</li>
+                    <li>2.选择数据报送属性</li>
+                    <li>3.选择数据报送文件</li>
+                    <li>4.上传</li>
                   </ul>
                 </div>
 
 
                 <div class="form-group" style="margin-top: 20px;">
-                  <label for="dataUpload" class="control-label">信息发布模板</label>
+                  <label for="dataUpload" class="control-label">报送模板</label>
                   <div class="input-group" style="width: 85%;">
                     <input id="dataUpload" type="text" class="form-control" disabled="disabled"/>
                   </div>
@@ -202,48 +215,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="radio">
                     <label style="line-height: 20px;">
                       <input type="radio" name="optionsRadios" id="optionsRadios2" value="incremental">
-                      部分数据(请选择时间跨度)
+                      增量数据(上一次报送之后新增的数据)
                     </label>
                     <div id='jqxDateTimeInput' style="display: none; margin-top: 5px;">
-                    </div>
                   </div>
-
-                  <div class="form-group" style="margin-top: 20px;">
-                    <label>文件类型</label>
-                    <select class="form-control" style="width: 20%;">
-                      <option>Excel</option>
-                      <option>Txt</option>
-                      <option>Dbf</option>
-                      <option>其他(请在备注中说明)</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>分隔符号</label>
-                    <select class="form-control" style="width: 20%;">
-                      <option>逗号(,)</option>
-                      <option>管道符(|)</option>
-                      <option>制表符(\t)</option>
-                      <option>其他(请在备注中说明)</option>
-                    </select>
-                  </div>
-
                 </div>
 
+                <div class="form-group" style="margin-top: 20px;">
+                  <label>备注说明</label>
+                  <textarea class="form-control" rows="3" placeholder="需要说明的情况" style="width: 85%;"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="jqxFileUpload" class="control-label">报送文件</label>
+                  <div class="input-group">
+                    <div id="jqxFileUpload"/>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 20px;">
+                  <label for="eventsPanel" class="control-label">报送详情</label>
+                  <div class="input-group" style="width: 85%;">
+                    <div id="eventsPanel"></div>
+                  </div>
+                </div>
 
               </div>
-              <div class="box-footer">
-                <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
-                <button type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-cloud-download"></i> 下载</button>
-                <button type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-cloud"></i> 转存</button>
-                <button type="submit" class="btn btn-success pull-right"><i class="fa fa-cloud-upload"></i> 网站发布</button>
-              </div>
-              </form>
-            </div><!-- jqxWidget -->
-          </div>
+            </div>
+
+          </div><!-- jqxWidget -->
         </div>
-
       </div>
+
+
     </section>
     <!-- /.content -->
   </div>
@@ -329,7 +333,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
       $("#navBar").jqxNavBar('selectedItem', 2);
     });
 
+    $('#jqxFileUpload').jqxFileUpload({
+      browseTemplate: 'success',
+      uploadTemplate: 'success',
+      cancelTemplate: 'danger',
+      width: 480,
+      theme: 'office',
+      multipleFilesUpload: false,
+      uploadUrl: 'imageUpload.php',
+      fileInputName: 'fileToUpload',
+      localization: {
+        browseButton: '选择报送文件',
+        uploadButton: '上传',
+        cancelButton: '取消',
+        uploadFileTooltip: '上传',
+        cancelFileTooltip: '删除'
+      }
+    });
 
+
+    $('#eventsPanel').jqxPanel({width: '100%', height: 150});
+
+    var fileSize = 0;
+
+    $('#jqxFileUpload').on('select', function (event) {
+      $('#eventsPanel').jqxPanel('clearcontent');
+      var args = event.args;
+      var fileName = args.file;
+      fileSize = args.size;
+      $('#eventsPanel').jqxPanel('append', '<strong>' + '待报送文件' + ':</strong> ' +
+        fileName + ';<br />' + '<strong>文件大小: </strong>' + fileSize + ';<br />');
+      $("#navBar").jqxNavBar('selectedItem', 3);
+    });
+
+    $('#jqxFileUpload').on('uploadEnd', function (event) {
+      var args = event.args;
+      var fileName = args.file;
+      var serverResponce = args.response;
+      var datapath = $('#dataUpload').val();
+      $('#eventsPanel').jqxPanel('append', '<strong>' + '-----------------------------------------------------------------' + '</strong><br /> ');
+      $('#eventsPanel').jqxPanel('append', '<strong>' + '报送完成' + '! </strong><br /> ');
+      $('#eventsPanel').jqxPanel('append', '<strong>' + '报送模板' + ': </strong> ' +
+        datapath + ';<br />');
+      $('#eventsPanel').jqxPanel('append', '<strong>' + '已报送文件' + ':</strong> ' +
+        fileName + ';<br />' + '<strong>文件大小: </strong>' + fileSize + ';<br />');
+      $('#dataUpload').val('');
+      $("#navBar").jqxNavBar('selectedItem', 0);
+    });
 
     $("#jqxDateTimeInput").jqxDateTimeInput({ culture : 'zh-CN', width: 250, height: 25,  selectionMode: 'range', animationType: 'slide' });
     $("#jqxDateTimeInput").on('change', function (event) {

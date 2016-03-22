@@ -7,26 +7,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>异议与差错数据处理 | 武汉征信中心归集系统</title>
+  <title>信息发布模板管理 | 武汉征信中心归集系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
   <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect.
-  -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
-
-  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/AdminLTE/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
   <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css"/>
   <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.metro.css" type="text/css"/>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="../../styles/main.css">
+  <!-- endbuild -->
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -39,61 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
-  <!-- Main Header -->
-  <header class="main-header">
-
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><i class="fa fa-bank"></i></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">信用信息归集系统</span>
-    </a>
-
-    <!-- Header Navbar -->
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <ul class="nav navbar-nav">
-        <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
-        <li class="active"><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
-        <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
-        <li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
-        <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
-      </ul>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <i class="fa fa-user"></i>
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">部门用户(市教育局)</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="./password.html" class="btn btn-default btn-flat">修改密码</a>
-                </div>
-                <div class="pull-right">
-                  <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  @@include('inc/header.html')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
 
@@ -103,10 +49,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">数据报送管理功能菜单</li>
-        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
-        <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
-        <li class="active"><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+        <li class="header">信用信息发布功能菜单</li>
+        <li><a href="./publish.html"><i class="fa fa-database" style="color: green;"></i> <span>信用信息发布</span></a></li>
+        <li class="active"><a href="./publishtemplate.html"><i class="fa fa-file-text" style="color: green;"></i> <span>信息发布模板管理</span></a></li>
+        <li><a href="./publishtype.html"><i class="fa fa-sitemap" style="color: green;"></i> <span>信息发布方式管理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -118,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-archive"></i> 异议与差错数据处理
+        <i class="fa fa-file-text"></i> 信息发布模板管理
       </h1>
     </section>
 
@@ -131,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">异议与差错数据处理列表</h3>
+              <h3 class="box-title">信息发布模板列表</h3>
             </div>
             <!-- /.box-header -->
 
@@ -140,46 +86,55 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <table id="tempList" border="1">
                 <thead>
                 <tr>
-                  <th align="left">ReportCode</th>
-                  <th align="left">WrongIndicator</th>
-                  <th align="left">AssumeWrong</th>
-                  <th align="left">AssumeRight</th>
-                  <th align="right">Status</th>
+                  <th align="left">Name</th>
+                  <th align="left">Target</th>
+                  <th align="left">FileType</th>
+                  <th align="right">SeparateSign</th>
                   <th align="right">ModifiedDate</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr id="WS20151101500800002">
-                  <td>WS20151101500800002</td>
-                  <td>姓名</td>
-                  <td>张广义</td>
-                  <td>张光义</td>
-                  <td>已处理</td>
-                  <td>2015-11-05</td>
+                <tr id="教师资格认定(高中阶段)">
+                  <td>教师资格认定(高中阶段)</td>
+                  <td>网站发布</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
                 </tr>
-                <tr id="WS20151101500800013">
-                  <td>WS20151101500800013</td>
-                  <td>身份证号</td>
-                  <td>42010319901125321</td>
-                  <td>420103199011253219</td>
-                  <td>已处理</td>
-                  <td>2015-11-05</td>
+                <tr>
+                  <td>教育系统干部及骨干教师培训认定</td>
+                  <td>网站发布</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
                 </tr>
-                <tr id="WS20151109500800433">
-                  <td>WS20151109500800433</td>
-                  <td>身份证号</td>
-                  <td>420102198305033320</td>
-                  <td>420102198805033320</td>
-                  <td>已处理</td>
-                  <td>2015-11-13</td>
+                <tr>
+                  <td>教育系统录用高校毕业生的就职情况</td>
+                  <td>省级报送</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
                 </tr>
-                <tr id="WS20151215100400045">
-                  <td>WS20151215100400045</td>
-                  <td>婚姻状态</td>
-                  <td>未婚</td>
-                  <td>已婚</td>
-                  <td>待处理</td>
-                  <td>2015-12-28</td>
+                <tr>
+                  <td>教育类行政处罚</td>
+                  <td>省级报送</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
+                </tr>
+                <tr>
+                  <td>优秀青年教师评审认定</td>
+                  <td>市级报送</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
+                </tr>
+                <tr>
+                  <td>武汉市名校长评审认定</td>
+                  <td>市级报送</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
                 </tr>
                 </tbody>
               </table>
@@ -190,7 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">异议与差错数据处理申请</h3>
+              <h3 class="box-title">信息发布模板维护</h3>
             </div>
             <!-- /.box-header -->
 
@@ -199,31 +154,55 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="box-body" style="margin-left: 20px;">
 
                 <div class="form-group">
-                  <label for="ReportCode" class="control-label">报告编号</label>
+                  <label for="tempName" class="control-label">模板名称</label>
                   <div class="input-group">
-                    <input id="ReportCode" type="text" class="form-control" style="width: 300px;"/>
+                    <input id="tempName" type="text" class="form-control" style="width: 300px;"/>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="WrongIndicator" class="control-label">异议数据项</label>
+                  <label for="reportTo" class="control-label">发布目的</label>
                   <div class="input-group">
-                    <input id="WrongIndicator" type="text" class="form-control" style="width: 300px;"/>
+                    <input id="reportTo" type="text" class="form-control" style="width: 300px;"/>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="AssumeWrong" class="control-label">认定错误值</label>
-                  <div class="input-group">
-                    <input id="AssumeWrong" type="text" class="form-control" style="width: 300px;"/>
-                  </div>
+                  <label>文件类型</label>
+                  <select class="form-control" style="width: 20%;">
+                    <option>Excel</option>
+                    <option>Txt</option>
+                    <option>Dbf</option>
+                    <option>其他(请在备注中说明)</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="AssumeRight" class="control-label">认定正确值</label>
-                  <div class="input-group">
-                    <input id="AssumeRight" type="text" class="form-control" style="width: 300px;"/>
-                  </div>
+                  <label>分隔符号</label>
+                  <select class="form-control" style="width: 20%;">
+                    <option>逗号(,)</option>
+                    <option>管道符(|)</option>
+                    <option>制表符(\t)</option>
+                    <option>其他(请在备注中说明)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>目录事项</label>
+                  <select id="indicatorSelector" class="form-control" style="width: 40%;">
+                    <option value="" selected="true" disabled="true">请选择信息发布事项</option>
+                    <option value="B04001">教师资格认定(高中阶段)</option>
+                    <option value="B04002">教育系统干部及骨干教师培训认定</option>
+                    <option value="B04003">教育系统录用高校毕业生的就职情况</option>
+                    <option value="B04004">教育类行政处罚</option>
+                    <option value="B04006">优秀青年教师评审认定</option>
+                    <option value="B04007">武汉市名校长评审认定</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>模板字段</label>
+                  <div id="table"></div>
                 </div>
 
                 <div class="form-group" style="margin-top: 20px; width: 50%;">
@@ -236,7 +215,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- /.box-body -->
               <div class="box-footer" style="width: 50%;">
                 <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
-                <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 提交申请</button>
+                <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 新增/保存修改</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -251,39 +230,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      技术支持 <i class="fa fa-phone-square"></i>027-85766650-407
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 武汉征信中心</strong>
-  </footer>
+  @@include('inc/footer.html')
 
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 2.1.4 -->
-<script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/bower_components/AdminLTE/dist/js/app.min.js"></script>
-
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatatable.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
-<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxinput.js"></script>
-<script type="text/javascript" src="../../scripts/main.js"></script>
-
+@@include('inc/jslib.html')
 
 
 <script type="text/javascript">
@@ -296,12 +247,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         editable: true,
         selectionMode: 'singleRow',
         columns: [
-          { text: '报告编号', dataField: 'ReportCode', width: 200 },
-          { text: '异议数据项', dataField: 'WrongIndicator', width: 100 },
-          { text: '认定错误值', dataField: 'AssumeWrong', width: 160 },
-          { text: '认定正确值', dataField: 'AssumeRight', width: 160 },
-          { text: '当前状态', dataField: 'Status', width: 80, align: 'right', cellsAlign: 'right' },
-          { text: '受理/处理时间', dataField: 'ModifiedDate', width: 100, align: 'right', cellsAlign: 'right' }
+          { text: '模板名称', dataField: 'Name', width: 300 },
+          { text: '发布目的', dataField: 'Target', width: 100 },
+          { text: '文件类型', dataField: 'FileType', width: 100 },
+          { text: '分隔符号', dataField: 'SeparateSign', width: 100, align: 'right', cellsAlign: 'right' },
+          { text: '生成/修改时间', dataField: 'ModifiedDate', width: 100, align: 'right', cellsAlign: 'right' }
         ]
       });
 
@@ -323,15 +273,60 @@ scratch. This page gets rid of all links and provides the needed markup only.
       { "columnID": "13", "columnName": "备注",  "columnType": "文本","columnOrder": "13"}
     ];
 
+    var indicatorsPrincipal = [
+      { "columnID": "1",  "columnName": "姓名", "columnType": "字符串" , "columnOrder": "1" },
+      { "columnID": "2",  "columnName": "证件名称", "columnType": "字符串", "columnOrder": "2"},
+      { "columnID": "3",  "columnName": "证件号码", "columnType": "字符串", "columnOrder": "3"},
+      { "columnID": "4",  "columnName": "认定日期", "columnType": "日期", "columnOrder": "4"},
+      { "columnID": "5",  "columnName": "认定文号", "columnType": "字符串", "columnOrder": "5"},
+      { "columnID": "6",  "columnName": "认定内容", "columnType": "字符串", "columnOrder": "6"},
+      { "columnID": "7",  "columnName": "工作单位", "columnType": "字符串", "columnOrder": "7"},
+      { "columnID": "8",  "columnName": "职务", "columnType": "字符串", "columnOrder": "8"},
+      { "columnID": "9",  "columnName": "学历", "columnType": "字符串", "columnOrder": "9"},
+      { "columnID": "10",  "columnName": "联系电话", "columnType": "字符串", "columnOrder": "10"},
+      { "columnID": "11",  "columnName": "备注", "columnType": "字符串", "columnOrder": "11"}
+    ];
+
+
+
+    var indicatorsPrincipalSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'columnID', type: 'int' },
+        { name: 'columnName' , type: 'string'},
+        { name: 'columnType' , type: 'string'},
+        { name: 'columnOrder', type: 'int'}
+      ],
+      id: 'columnID',
+      localdata: indicatorsPrincipal,
+      addRow: function (rowID, rowData, position, commit) {
+        // synchronize with the server - send insert command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        // you can pass additional argument to the commit callback which represents the new ID if it is generated from a DB.
+        commit(true);
+      },
+      updateRow: function (rowID, rowData, commit) {
+        // synchronize with the server - send update command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        commit(true);
+      },
+      deleteRow: function (rowID, commit) {
+        // synchronize with the server - send delete command
+        // call commit with parameter true if the synchronization with the server is successful
+        // and with parameter false if the synchronization failed.
+        commit(true);
+      }
+    };
+
     var templateSource =
     {
       datatype: "json",
       datafields: [
         { name: 'columnID', type: 'int' },
         { name: 'columnName', type: 'string' },
-        { name: 'ShipName', type: 'string' },
-        { name: 'ShipAddress', type: 'string' },
-        { name: 'ShipCity', type: 'string' },
         { name: 'columnType', type: 'string' },
         { name: 'columnOrder', type: 'int' }
       ],
@@ -363,12 +358,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         // data is loaded.
       }
     });
+
+    var indicatorsPrincipalDA = new $.jqx.dataAdapter(indicatorsPrincipalSource, {
+      loadComplete: function () {
+        // data is loaded.
+      }
+    });
+
     $("#table").jqxDataTable(
       {
         width: 600,
 //        source: dataAdapter,
 
         pageable: true,
+        sortable: true,
         editable: true,
         showToolbar: true,
         altRows: true,
@@ -522,6 +525,78 @@ scratch. This page gets rid of all links and provides the needed markup only.
           { text: '字段排序', dataField: 'columnOrder', cellsAlign: 'right', align: 'right', width: 80}
         ]
       });
+
+    $('#tempList').on('rowSelect',
+      function (event)
+      {
+        // event args.
+        var args = event.args;
+        // row data.
+        var row = args.row;
+        // row index.
+        var index = args.index;
+        // row's data bound index.
+        var boundIndex = args.boundIndex;
+        // row key.
+        var key = args.key;
+
+        $('#tempName').val("教师资格认定(高中阶段)");
+        $("#table").jqxDataTable({source: dataAdapter});
+      });
+
+    var nullList = [
+      { "columnID": "1",  "columnName": "姓名", "columnType": "字符串" , "columnOrder": "1" },
+      { "columnID": "2",  "columnName": "工作单位", "columnType": "字符串", "columnOrder": "2"},
+      { "columnID": "3",  "columnName": "评选事迹", "columnType": "字符串", "columnOrder": "3"},
+      { "columnID": "4",  "columnName": "评选日期", "columnType": "日期", "columnOrder": "4"},
+      { "columnID": "5",  "columnName": "认定文号", "columnType": "字符串", "columnOrder": "5"},
+      { "columnID": "6",  "columnName": "数据更新时间戳", "columnType": "日期", "columnOrder": "6"},
+      { "columnID": "7",  "columnName": "备注", "columnType": "字符串", "columnOrder": "7"}
+    ];
+    var nullSource =
+    {
+      datatype: "json",
+      datafields: [
+        { name: 'columnID', type: 'int' },
+        { name: 'columnName' , type: 'string'},
+        { name: 'columnType' , type: 'string'},
+        { name: 'columnOrder', type: 'int'}
+      ],
+      id: 'columnID',
+      localdata: nullList,
+      addRow: function (rowID, rowData, position, commit) {
+        commit(true);
+      },
+      updateRow: function (rowID, rowData, commit) {
+        commit(true);
+      },
+      deleteRow: function (rowID, commit) {
+        commit(true);
+      }
+    };
+    var nullDA = new $.jqx.dataAdapter(nullSource, {
+      loadComplete: function () {
+        // data is loaded.
+      }
+    });
+
+    $('#indicatorSelector').on('change',
+      function (event)
+      {
+        // event args.
+        var args = event.args;
+
+        if ($('#indicatorSelector').val().indexOf("B04001") >= 0){
+          $("#table").jqxDataTable({source: dataAdapter});
+        } else if ($('#indicatorSelector').val().indexOf("B04007") >= 0) {
+          $("#table").jqxDataTable({source: indicatorsPrincipalDA});
+        } else {
+          $("#table").jqxDataTable({source: nullDA});
+        }
+
+
+      });
+
 
   });
 </script>
