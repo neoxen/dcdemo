@@ -6,6 +6,9 @@
   <title>系统登录 | 武汉征信中心归集系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
   <!-- Bootstrap 3.3.5 -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -16,6 +19,12 @@
   <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="/bower_components/AdminLTE/plugins/iCheck/square/blue.css">
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,12 +75,22 @@
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery 2.1.4 -->
-<script src="/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
 <script src="/bower_components/AdminLTE/plugins/iCheck/icheck.min.js"></script>
+<!--<script src="/bower_components/adminlte/dist/js/app.js"></script>-->
+<!-- endbower -->
+<!-- endbuild -->
+
+
+<!-- build:js scripts/main.js -->
+<!--< script src="scripts/main.js"></ script >-->
+<!-- endbuild -->
+
 <script>
   $(function () {
     $('input').iCheck({
