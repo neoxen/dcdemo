@@ -58,7 +58,8 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('app/pages/user'));
+    .pipe(gulp.dest('app/pages/user'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
@@ -121,7 +122,7 @@ gulp.task('serve', ['fileinclude', 'styles', 'scripts', 'fonts'], () => {
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);
-  gulp.watch('app/pages/src/**/*', ['fileinclude']);
+  gulp.watch('app/pages/src/**/*.html', ['fileinclude']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
