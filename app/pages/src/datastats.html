@@ -10,6 +10,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @@include('inc/meta.html')
 </head>
 <body class="hold-transition skin-green sidebar-mini">
+
+<div id="popover">
+  <table id="table" border="1">
+    <thead>
+    <tr>
+      <th align="left">姓名</th>
+      <th align="left">证件名称</th>
+      <th align="left">证件号码</th>
+      <th align="right">性别</th>
+      <th align="right">认定日期</th>
+      <th align="right">认定文号</th>
+      <th align="right">认定内容</th>
+      <th align="right">职务</th>
+      <th align="right">学历</th>
+      <th align="right">联系电话</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>王学文</td>
+      <td>身份证</td>
+      <td>420102196604130810</td>
+      <td>男</td>
+      <td>2015年8月2日</td>
+      <td>武教文-201509</td>
+      <td>武汉市名校长评审认定</td>
+      <td>校长</td>
+      <td>硕士研究生</td>
+      <td>86728583</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
 <div class="wrapper">
 
   @@include('inc/header.html')
@@ -238,6 +273,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
         pagerButtonsCount: 10,
         aggregatesHeight: 25,
         showAggregates: true,
+        rendering: function()
+        {
+          // destroys all buttons.
+          if ($(".editButtons").length > 0) {
+            $(".editButtons").jqxButton('destroy');
+          }
+        },
+        // called when jqxDataTable is rendered.
+        rendered: function () {
+          if ($(".editButtons").length > 0) {
+            $(".editButtons").jqxButton();
+
+            var editClick = function (event) {
+              var target = $(event.target);
+              // get button's value.
+              var value = target.val();
+              // get clicked row.
+              var rowIndex = parseInt(event.target.getAttribute('data-row'));
+              if (isNaN(rowIndex)) {
+                return;
+              }
+            };
+            $(".editButtons").on('click', function (event) {
+              editClick(event);
+            });
+          }
+        },
         columns: [
           { text: '序号', datafield: 'id', width: 90 },
           { text: '信息事项', datafield: 'text' },
@@ -254,9 +316,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
               renderString += "<strong>总计: </strong>" + aggregates.Total + "</div>";
               return renderString;
             }
+          },
+          {
+            text: '预览', cellsAlign: 'center', align: "center", columnType: 'none', editable: false, sortable: false, dataField: null, cellsRenderer: function (row, column, value) {
+            // render custom column.
+            return "<button data-row='" + row + "' class='editButtons'>预览</button>";
+          }
           }
         ]
       });
+
+    $("#popover").jqxPopover({  isModal: true, showArrow: false,  offset: { left: 0, top: 100 },
+      position: "left", title: "报送数据预览", showCloseButton: true, selector: $(".editButtons") });
+
 
     // Create jqxTree
     $("#splitter").jqxSplitter({width: 900, height: 600, panels: [{size: 300}, {size: 600}]});
