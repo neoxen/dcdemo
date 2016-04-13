@@ -5,6 +5,7 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
 import fileinclude from 'gulp-file-include';
+import rename from 'gulp-rename';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -65,9 +66,9 @@ gulp.task('fileinclude', function() {
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/**/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano()))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    // .pipe($.if('*.js', $.uglify()))
+    // .pipe($.if('*.css', $.cssnano()))
+    // .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -76,16 +77,15 @@ gulp.task('images', () => {
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true,
-      // don't remove IDs from SVGs, they are often used
-      // as hooks for embedding and styling
       svgoPlugins: [{cleanupIDs: false}]
     })))
     .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
-    .concat('app/fonts/**/*'))
+  return gulp.src(['bower_components/**/*.{eot,svg,ttf,woff,woff2}', 'app/fonts/**/*', '!bower_components/Ionicons/src/*'])
+    .pipe(rename({dirname: ''}))
+    // .pipe($.print())
     .pipe(gulp.dest('.tmp/fonts'))
     .pipe(gulp.dest('dist/fonts'));
 });
