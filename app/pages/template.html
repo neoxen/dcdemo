@@ -6,13 +6,94 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
 <head>
 
-  <title>信息发布模板管理 | 武汉征信中心归集系统</title>
-  @@include('inc/meta.html')
+  <title>报送模板管理 | 武汉征信中心归集系统</title>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- build:css ../../styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.metro.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/intro.js/introjs.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/intro.js/themes/introjs-nassim.css" type="text/css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
-  @@include('inc/header.html')
+  <header class="main-header">
+
+  <!-- Logo -->
+  <a href="#" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><i class="fa fa-bank"></i></span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg">信用信息归集系统</span>
+  </a>
+
+  <!-- Header Navbar -->
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <ul class="nav navbar-nav">
+      <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
+      <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+      <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+      <li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
+      <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
+    </ul>
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+
+        <!-- User Account Menu -->
+        <li class="dropdown user user-menu">
+          <!-- Menu Toggle Button -->
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- The user image in the navbar-->
+            <i class="fa fa-user"></i>
+            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+            <span class="hidden-xs">部门用户(数据报送)</span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- The user image in the menu -->
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="./password.html" class="btn btn-default btn-flat">修改密码</a>
+              </div>
+              <div class="pull-right">
+                <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
 
@@ -22,11 +103,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">信用信息发布功能菜单</li>
-        <li><a href="./publish.html"><i class="fa fa-share-square-o" style="color: green;"></i> <span>信用信息发布</span></a></li>
-        <li><a href="./jointpunishment.html"><i class="fa fa-street-view" style="color: green;"></i> <span>联合惩戒信息共享</span></a></li>
-        <li class="active"><a href="./publishtemplate.html"><i class="fa fa-file-text" style="color: green;"></i> <span>信息发布模板管理</span></a></li>
-        <li><a href="./publishtype.html"><i class="fa fa-sitemap" style="color: green;"></i> <span>信息发布方式管理</span></a></li>
+        <li class="header">数据报送管理功能菜单</li>
+        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
+        <li class="active"><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
+        <li><a href="./datastats.html"><i class="fa fa-line-chart" style="color: green;"></i> <span>数据报送统计查询</span></a></li>
+        <li><a href="./dataform.html"><i class="fa fa-upload" style="color: green;"></i> <span>终端数据填报</span></a></li>
+        <li><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -38,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-file-text"></i> 信息发布模板管理
+        <i class="fa fa-file-text"></i> 报送模板管理
       </h1>
     </section>
 
@@ -51,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">信息发布模板列表</h3>
+              <h3 class="box-title">报送模板列表</h3>
             </div>
             <!-- /.box-header -->
 
@@ -61,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead>
                 <tr>
                   <th align="left">Name</th>
-                  <th align="left">Target</th>
+                  <th align="left">Period</th>
                   <th align="left">FileType</th>
                   <th align="right">SeparateSign</th>
                   <th align="right">ModifiedDate</th>
@@ -69,43 +151,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </thead>
                 <tbody>
                 <tr id="教师资格认定(高中阶段)">
-                  <td>教师资格认定(高中阶段)</td>
-                  <td>网站发布</td>
+                  <td>B04001-教师资格认定(高中阶段)</td>
+                  <td>每年</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
-                  <td>教育系统干部及骨干教师培训认定</td>
-                  <td>网站发布</td>
+                  <td>B04002-教育系统干部及骨干教师培训认定</td>
+                  <td>每年</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
-                  <td>教育系统录用高校毕业生的就职情况</td>
-                  <td>省级报送</td>
+                  <td>B04003-教育系统录用高校毕业生的就职情况</td>
+                  <td>每年</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
-                  <td>教育类行政处罚</td>
-                  <td>省级报送</td>
+                  <td>B04004-教育类行政处罚</td>
+                  <td>每月</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
-                  <td>优秀青年教师评审认定</td>
-                  <td>市级报送</td>
+                  <td>B04006-优秀青年教师评审认定</td>
+                  <td>每年</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
                 </tr>
                 <tr>
-                  <td>武汉市名校长评审认定</td>
-                  <td>市级报送</td>
+                  <td>B04007-武汉市名校长评审认定</td>
+                  <td>每年</td>
+                  <td>Excel</td>
+                  <td>制表符(\t)</td>
+                  <td>2016-1-28</td>
+                </tr>
+                <tr>
+                  <td>行政双公示</td>
+                  <td>不定期</td>
                   <td>Excel</td>
                   <td>制表符(\t)</td>
                   <td>2016-1-28</td>
@@ -119,7 +208,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">信息发布模板维护</h3>
+              <h3 class="box-title">报送模板维护</h3>
             </div>
             <!-- /.box-header -->
 
@@ -135,10 +224,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
 
                 <div class="form-group">
-                  <label for="reportTo" class="control-label">发布目的</label>
-                  <div class="input-group">
-                    <input id="reportTo" type="text" class="form-control" style="width: 300px;"/>
-                  </div>
+                  <label>报送周期</label>
+                  <select class="form-control" style="width: 20%;">
+                    <option>每年</option>
+                    <option>每半年</option>
+                    <option>每季度</option>
+                    <option>每月</option>
+                    <option>每周</option>
+                    <option>不定期</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
@@ -161,18 +255,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </select>
                 </div>
 
-                <div class="form-group">
-                  <label>目录事项</label>
-                  <select id="indicatorSelector" class="form-control" style="width: 40%;">
-                    <option value="" selected="true" disabled="true">请选择信息发布事项</option>
-                    <option value="B04001">教师资格认定(高中阶段)</option>
-                    <option value="B04002">教育系统干部及骨干教师培训认定</option>
-                    <option value="B04003">教育系统录用高校毕业生的就职情况</option>
-                    <option value="B04004">教育类行政处罚</option>
-                    <option value="B04006">优秀青年教师评审认定</option>
-                    <option value="B04007">武汉市名校长评审认定</option>
-                  </select>
-                </div>
+
 
                 <div class="form-group">
                   <label>模板字段</label>
@@ -204,11 +287,61 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  @@include('inc/footer.html')
+    <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      技术支持 <i class="fa fa-phone-square"></i>027-85766670-407
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 武汉征信中心</strong>
+  </footer>
+
 
 </div>
 <!-- ./wrapper -->
-@@include('inc/jslib.html')
+<!-- build:js ../../scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bower_components/AdminLTE/plugins/iCheck/icheck.min.js"></script>
+<script src="/bower_components/adminlte/dist/js/app.js"></script>
+<script type="text/javascript" src="/bower_components/intro.js/intro.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxexpander.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.sort.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.filter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.selection.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtabs.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.pager.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxfileupload.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxnavbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.zh-CN.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatatable.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxinput.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdragdrop.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.edit.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpopover.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
 
 <script type="text/javascript" src="../../scripts/main.js"></script>
 
@@ -224,7 +357,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         selectionMode: 'singleRow',
         columns: [
           { text: '模板名称', dataField: 'Name', width: 300 },
-          { text: '发布目的', dataField: 'Target', width: 100 },
+          { text: '报送周期', dataField: 'Period', width: 100 },
           { text: '文件类型', dataField: 'FileType', width: 100 },
           { text: '分隔符号', dataField: 'SeparateSign', width: 100, align: 'right', cellsAlign: 'right' },
           { text: '生成/修改时间', dataField: 'ModifiedDate', width: 100, align: 'right', cellsAlign: 'right' }
@@ -249,60 +382,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
       { "columnID": "13", "columnName": "备注",  "columnType": "文本","columnOrder": "13"}
     ];
 
-    var indicatorsPrincipal = [
-      { "columnID": "1",  "columnName": "姓名", "columnType": "字符串" , "columnOrder": "1" },
-      { "columnID": "2",  "columnName": "证件名称", "columnType": "字符串", "columnOrder": "2"},
-      { "columnID": "3",  "columnName": "证件号码", "columnType": "字符串", "columnOrder": "3"},
-      { "columnID": "4",  "columnName": "认定日期", "columnType": "日期", "columnOrder": "4"},
-      { "columnID": "5",  "columnName": "认定文号", "columnType": "字符串", "columnOrder": "5"},
-      { "columnID": "6",  "columnName": "认定内容", "columnType": "字符串", "columnOrder": "6"},
-      { "columnID": "7",  "columnName": "工作单位", "columnType": "字符串", "columnOrder": "7"},
-      { "columnID": "8",  "columnName": "职务", "columnType": "字符串", "columnOrder": "8"},
-      { "columnID": "9",  "columnName": "学历", "columnType": "字符串", "columnOrder": "9"},
-      { "columnID": "10",  "columnName": "联系电话", "columnType": "字符串", "columnOrder": "10"},
-      { "columnID": "11",  "columnName": "备注", "columnType": "字符串", "columnOrder": "11"}
-    ];
-
-
-
-    var indicatorsPrincipalSource =
-    {
-      datatype: "json",
-      datafields: [
-        { name: 'columnID', type: 'int' },
-        { name: 'columnName' , type: 'string'},
-        { name: 'columnType' , type: 'string'},
-        { name: 'columnOrder', type: 'int'}
-      ],
-      id: 'columnID',
-      localdata: indicatorsPrincipal,
-      addRow: function (rowID, rowData, position, commit) {
-        // synchronize with the server - send insert command
-        // call commit with parameter true if the synchronization with the server is successful
-        // and with parameter false if the synchronization failed.
-        // you can pass additional argument to the commit callback which represents the new ID if it is generated from a DB.
-        commit(true);
-      },
-      updateRow: function (rowID, rowData, commit) {
-        // synchronize with the server - send update command
-        // call commit with parameter true if the synchronization with the server is successful
-        // and with parameter false if the synchronization failed.
-        commit(true);
-      },
-      deleteRow: function (rowID, commit) {
-        // synchronize with the server - send delete command
-        // call commit with parameter true if the synchronization with the server is successful
-        // and with parameter false if the synchronization failed.
-        commit(true);
-      }
-    };
-
     var templateSource =
     {
       datatype: "json",
       datafields: [
         { name: 'columnID', type: 'int' },
         { name: 'columnName', type: 'string' },
+        { name: 'ShipName', type: 'string' },
+        { name: 'ShipAddress', type: 'string' },
+        { name: 'ShipCity', type: 'string' },
         { name: 'columnType', type: 'string' },
         { name: 'columnOrder', type: 'int' }
       ],
@@ -334,20 +422,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         // data is loaded.
       }
     });
-
-    var indicatorsPrincipalDA = new $.jqx.dataAdapter(indicatorsPrincipalSource, {
-      loadComplete: function () {
-        // data is loaded.
-      }
-    });
-
     $("#table").jqxDataTable(
       {
         width: 600,
 //        source: dataAdapter,
 
         pageable: true,
-        sortable: true,
         editable: true,
         showToolbar: true,
         altRows: true,
@@ -519,61 +599,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         $('#tempName').val("教师资格认定(高中阶段)");
         $("#table").jqxDataTable({source: dataAdapter});
       });
-
-    var nullList = [
-      { "columnID": "1",  "columnName": "姓名", "columnType": "字符串" , "columnOrder": "1" },
-      { "columnID": "2",  "columnName": "工作单位", "columnType": "字符串", "columnOrder": "2"},
-      { "columnID": "3",  "columnName": "评选事迹", "columnType": "字符串", "columnOrder": "3"},
-      { "columnID": "4",  "columnName": "评选日期", "columnType": "日期", "columnOrder": "4"},
-      { "columnID": "5",  "columnName": "认定文号", "columnType": "字符串", "columnOrder": "5"},
-      { "columnID": "6",  "columnName": "数据更新时间戳", "columnType": "日期", "columnOrder": "6"},
-      { "columnID": "7",  "columnName": "备注", "columnType": "字符串", "columnOrder": "7"}
-    ];
-    var nullSource =
-    {
-      datatype: "json",
-      datafields: [
-        { name: 'columnID', type: 'int' },
-        { name: 'columnName' , type: 'string'},
-        { name: 'columnType' , type: 'string'},
-        { name: 'columnOrder', type: 'int'}
-      ],
-      id: 'columnID',
-      localdata: nullList,
-      addRow: function (rowID, rowData, position, commit) {
-        commit(true);
-      },
-      updateRow: function (rowID, rowData, commit) {
-        commit(true);
-      },
-      deleteRow: function (rowID, commit) {
-        commit(true);
-      }
-    };
-    var nullDA = new $.jqx.dataAdapter(nullSource, {
-      loadComplete: function () {
-        // data is loaded.
-      }
-    });
-
-    $('#indicatorSelector').on('change',
-      function (event)
-      {
-        // event args.
-        var args = event.args;
-
-        if ($('#indicatorSelector').val().indexOf("B04001") >= 0){
-          $("#table").jqxDataTable({source: dataAdapter});
-        } else if ($('#indicatorSelector').val().indexOf("B04007") >= 0) {
-          $("#table").jqxDataTable({source: indicatorsPrincipalDA});
-        } else {
-          $("#table").jqxDataTable({source: nullDA});
-        }
-
-
-      });
-
-
   });
 </script>
 

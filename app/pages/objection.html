@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+
+  <title>异议与差错数据处理 | 武汉征信中心归集系统</title>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- build:css ../../styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.metro.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/intro.js/introjs.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/intro.js/themes/introjs-nassim.css" type="text/css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+
+  <!-- Logo -->
+  <a href="#" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><i class="fa fa-bank"></i></span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg">信用信息归集系统</span>
+  </a>
+
+  <!-- Header Navbar -->
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <ul class="nav navbar-nav">
+      <li><a href="./catalog.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
+      <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+      <li><a href="./publish.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+      <li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>
+      <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
+    </ul>
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+
+        <!-- User Account Menu -->
+        <li class="dropdown user user-menu">
+          <!-- Menu Toggle Button -->
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- The user image in the navbar-->
+            <i class="fa fa-user"></i>
+            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+            <span class="hidden-xs">部门用户(数据报送)</span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- The user image in the menu -->
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="./password.html" class="btn btn-default btn-flat">修改密码</a>
+              </div>
+              <div class="pull-right">
+                <a href="../../index.html" class="btn btn-default btn-flat">退出系统</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">数据报送管理功能菜单</li>
+        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
+        <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
+        <li><a href="./datastats.html"><i class="fa fa-line-chart" style="color: green;"></i> <span>数据报送统计查询</span></a></li>
+        <li><a href="./dataform.html"><i class="fa fa-upload" style="color: green;"></i> <span>终端数据填报</span></a></li>
+        <li class="active"><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-archive"></i> 异议与差错数据处理
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+
+      <div id="ContentPanel" style="overflow: auto;margin: 5px;">
+        <div id='jqxWidget' style="font-size: 12px; font-family: Verdana; float: left;width: 98%;">
+
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">异议与差错数据处理列表</h3>
+            </div>
+            <!-- /.box-header -->
+
+            <div class="box-body">
+
+              <table id="tempList" border="1">
+                <thead>
+                <tr>
+                  <th align="left">ReportCode</th>
+                  <th align="left">WrongIndicator</th>
+                  <th align="left">AssumeWrong</th>
+                  <th align="left">AssumeRight</th>
+                  <th align="right">Status</th>
+                  <th align="right">ModifiedDate</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="WS20151101500800002">
+                  <td>WS20151101500800002</td>
+                  <td>姓名</td>
+                  <td>张广义</td>
+                  <td>张光义</td>
+                  <td>已处理</td>
+                  <td>2015-11-05</td>
+                </tr>
+                <tr id="WS20151101500800013">
+                  <td>WS20151101500800013</td>
+                  <td>身份证号</td>
+                  <td>42010319901125321</td>
+                  <td>420103199011253219</td>
+                  <td>已处理</td>
+                  <td>2015-11-05</td>
+                </tr>
+                <tr id="WS20151109500800433">
+                  <td>WS20151109500800433</td>
+                  <td>身份证号</td>
+                  <td>420102198305033320</td>
+                  <td>420102198805033320</td>
+                  <td>已处理</td>
+                  <td>2015-11-13</td>
+                </tr>
+                <tr id="WS20151215100400045">
+                  <td>WS20151215100400045</td>
+                  <td>婚姻状态</td>
+                  <td>未婚</td>
+                  <td>已婚</td>
+                  <td>待处理</td>
+                  <td>2015-12-28</td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">异议与差错数据处理申请</h3>
+            </div>
+            <!-- /.box-header -->
+
+
+            <form class="form-horizontal">
+              <div class="box-body" style="margin-left: 20px;">
+
+                <div class="form-group">
+                  <label for="ReportCode" class="control-label">报告编号</label>
+                  <div class="input-group">
+                    <input id="ReportCode" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="WrongIndicator" class="control-label">异议数据项</label>
+                  <div class="input-group">
+                    <input id="WrongIndicator" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="AssumeWrong" class="control-label">认定错误值</label>
+                  <div class="input-group">
+                    <input id="AssumeWrong" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="AssumeRight" class="control-label">认定正确值</label>
+                  <div class="input-group">
+                    <input id="AssumeRight" type="text" class="form-control" style="width: 300px;"/>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 20px; width: 50%;">
+                  <label>备注说明</label>
+                  <textarea class="form-control" rows="3" placeholder="需要说明的情况"></textarea>
+                </div>
+
+
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer" style="width: 50%;">
+                <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
+                <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> 提交申请</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      技术支持 <i class="fa fa-phone-square"></i>027-85766670-407
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 武汉征信中心</strong>
+  </footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- build:js ../../scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bower_components/AdminLTE/plugins/iCheck/icheck.min.js"></script>
+<script src="/bower_components/adminlte/dist/js/app.js"></script>
+<script type="text/javascript" src="/bower_components/intro.js/intro.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxexpander.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.sort.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.filter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.selection.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtabs.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.pager.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxfileupload.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxnavbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.zh-CN.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatatable.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxinput.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdragdrop.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.edit.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpopover.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $("#tempList").jqxDataTable(
+      {
+        altRows: true,
+        sortable: true,
+        editable: true,
+        selectionMode: 'singleRow',
+        columns: [
+          { text: '报告编号', dataField: 'ReportCode', width: 200 },
+          { text: '异议数据项', dataField: 'WrongIndicator', width: 100 },
+          { text: '认定错误值', dataField: 'AssumeWrong', width: 160 },
+          { text: '认定正确值', dataField: 'AssumeRight', width: 160 },
+          { text: '当前状态', dataField: 'Status', width: 80, align: 'right', cellsAlign: 'right' },
+          { text: '受理/处理时间', dataField: 'ModifiedDate', width: 100, align: 'right', cellsAlign: 'right' }
+        ]
+      });
+  });
+
+
+</script>
+
+</body>
+</html>
+
+
