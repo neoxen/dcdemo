@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+
+  <title>联合惩戒信息共享 | 武汉征信中心归集系统</title>
+  @@include('inc/meta.html')
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper">
+
+  @@include('inc/header.html')
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">信用信息发布功能菜单</li>
+        <li><a href="./publish.html"><i class="fa fa-share-square-o" style="color: green;"></i> <span>信用信息发布</span></a></li>
+        <li class="active"><a href="./jointpunishment.html"><i class="fa fa-street-view" style="color: green;"></i> <span>联合惩戒信息共享</span></a></li>
+        <li><a href="./publishtemplate.html"><i class="fa fa-file-text" style="color: green;"></i> <span>信息发布模板管理</span></a></li>
+        <li><a href="./publishtype.html"><i class="fa fa-sitemap" style="color: green;"></i> <span>信息发布方式管理</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-street-view"></i> 联合惩戒信息共享
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div id="splitter">
+        <div>
+          <div style="visibility: hidden; border: none;" id='jqxTree'>
+            <ul>
+              <li id="Organ" item-expanded='true'>
+                <img style='float: left; margin-right: 5px;' src='../../images/jqwidgets/folder.png'/>
+                <span item-title="true">市直部门</span>
+                <ul>
+                  <li id="市发改委">
+                    <span item-title="true">市发改委</span>
+                  </li>
+                  <li id="市公安局">
+                    <span item-title="true">市公安局</span>
+                  </li>
+                  <li id="市国税局">
+                    <span item-title="true">市国税局</span>
+                  </li>
+                  <li id="市地税局">
+                    <span item-title="true">市地税局</span>
+                  </li>
+                  <li id="市工商局">
+                    <span item-title="true">市工商局</span>
+                  </li>
+                  <li id="市司法局">
+                    <span item-title="true">市司法局</span>
+                  </li>
+
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="ContentPanel" style="overflow: auto;margin: 5px;">
+          <div id='jqxWidget' style="font-size: 12px; font-family: Verdana; float: left;width: 98%;">
+
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <h3 class="box-title">联合惩戒信息共享</h3>
+              </div>
+              <!-- /.box-header -->
+
+              <form method="get">
+                <div class="box-body">
+
+
+                  <div class="form-group" style="margin-top: 20px;">
+                      <label>联合惩戒信息说明</label>
+                      <textarea class="form-control" rows="8" placeholder="联合惩戒信息说明"></textarea>
+                  </div>
+
+                  <div class="form-group" style="margin-top: 20px;">
+                    <label for="statement" class="control-label">发布依据(正式发文的扫描文件)</label>
+                    <div class="input-group">
+                      <div id="statement"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group" style="margin-top: 20px;">
+                    <label for="attachment" class="control-label">数据附件(联合惩戒信息数据文件)</label>
+                    <div class="input-group">
+                      <div id="attachment"/>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
+                  <button type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-send"></i> 共享</button>
+                </div>
+              </form>
+            </div><!-- jqxWidget -->
+
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <h3 class="box-title">信息共享记录</h3>
+              </div>
+              <!-- /.box-header -->
+
+              <div class="box-body">
+
+                <div id="dataTable"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  @@include('inc/footer.html')
+
+</div>
+<!-- ./wrapper -->
+@@include('inc/jslib.html')
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    // Create jqxTree
+    $("#splitter").jqxSplitter({width: 900, height: 600, panels: [{size: 300}, {size: 600}]});
+    $('#jqxTree').jqxTree({height: '100%', width: '100%',checkboxes: true, hasThreeStates: true});
+    $('#jqxTree').css('visibility', 'visible');
+
+
+    var uploadRecords = [
+      {"id": "1", "text": "[市公安局, 市国税局, 市地税局]", "uploadTime": "2016-03-25", "quantity": 2041},
+      {"id": "2", "text": "[市工商局]", "uploadTime": "2016-03-18", "quantity": 623},
+      {"id": "3", "text": "[市工商局, 市公安局, 市国税局, 市地税局]", "uploadTime": "2016-03-11", "quantity": 549},
+      {"id": "4", "text": "[市国税局, 市地税局]", "uploadTime": "2016-03-04", "quantity": 474}
+    ];
+
+
+    var uploadRecordsSource =
+    {
+      localData: uploadRecords,
+      dataType: "json",
+      datafields: [
+        {name: 'id', type: 'string'},
+        {name: 'text', type: 'string'},
+        {name: 'uploadTime', type: 'string'},
+        {name: 'quantity', type: 'number'}
+      ],
+      updateRow: function (rowid, rowdata, commit) {
+        // synchronize with the server - send update command
+        commit(true);
+      }
+    };
+    var uploadRecordsSourceDA = new $.jqx.dataAdapter(uploadRecordsSource);
+    // initialize jqxDataTable
+    $("#dataTable").jqxDataTable(
+      {
+        width: 540,
+        source: uploadRecordsSourceDA,
+        altRows: true,
+        pageable: true,
+        pagerButtonsCount: 10,
+        columns: [
+          {text: '序号', datafield: 'id', width: 40},
+          {text: '共享对象', datafield: 'text'},
+          {text: '共享时间', datafield: 'uploadTime', width: 100}
+        ]
+      });
+
+    $('#statement').jqxFileUpload({
+      browseTemplate: 'success',
+      uploadTemplate: 'success',
+      cancelTemplate: 'danger',
+      width: 480,
+      theme: 'office',
+      multipleFilesUpload: false,
+      uploadUrl: 'imageUpload.php',
+      fileInputName: 'statementFile',
+      localization: {
+        browseButton: '选择发布依据',
+        uploadButton: '上传',
+        cancelButton: '取消',
+        uploadFileTooltip: '上传',
+        cancelFileTooltip: '删除'
+      }
+    });
+    
+
+    $('#attachment').jqxFileUpload({
+      browseTemplate: 'success',
+      uploadTemplate: 'success',
+      cancelTemplate: 'danger',
+      width: 480,
+      theme: 'office',
+      multipleFilesUpload: false,
+      uploadUrl: 'imageUpload.php',
+      fileInputName: 'attachmentFile',
+      localization: {
+        browseButton: '选择数据附件',
+        uploadButton: '上传',
+        cancelButton: '取消',
+        uploadFileTooltip: '上传',
+        cancelFileTooltip: '删除'
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
