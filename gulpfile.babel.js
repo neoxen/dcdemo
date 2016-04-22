@@ -4,7 +4,6 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
-import fileinclude from 'gulp-file-include';
 import rename from 'gulp-rename';
 
 const $ = gulpLoadPlugins();
@@ -53,15 +52,6 @@ const testLintOptions = {
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('fileinclude', function() {
-  gulp.src(['app/pages/src/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest('app/pages/user'))
-    .pipe(reload({stream: true}));
-});
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/**/*.html')
@@ -101,7 +91,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['fileinclude', 'styles', 'scripts', 'fonts'], () => {
+gulp.task('serve', [ 'styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -122,7 +112,7 @@ gulp.task('serve', ['fileinclude', 'styles', 'scripts', 'fonts'], () => {
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);
-  gulp.watch('app/pages/src/**/*.html', ['fileinclude']);
+  // gulp.watch('app/pages/src/**/*.html', ['fileinclude']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
@@ -179,6 +169,6 @@ gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
 
-gulp.task('ignorelint', [ 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('nolint', [ 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
