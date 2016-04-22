@@ -56,14 +56,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <li id="市发改委">
                     <span item-title="true">市发改委</span>
                   </li>
-                  <li id="市公安局">
-                    <span item-title="true">市公安局</span>
-                  </li>
                   <li id="市国税局">
                     <span item-title="true">市国税局</span>
                   </li>
                   <li id="市地税局">
                     <span item-title="true">市地税局</span>
+                  </li>
+                  <li id="市公安局">
+                    <span item-title="true">市公安局</span>
                   </li>
                   <li id="市工商局">
                     <span item-title="true">市工商局</span>
@@ -71,8 +71,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <li id="市司法局">
                     <span item-title="true">市司法局</span>
                   </li>
-
-
                 </ul>
               </li>
             </ul>
@@ -87,17 +85,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <!-- /.box-header -->
 
-              <form method="get">
-                <div class="box-body">
+              <div class="box-body">
+
 
 
                   <div class="form-group" style="margin-top: 20px;">
-                      <label>联合惩戒信息说明</label>
-                      <textarea class="form-control" rows="8" placeholder="联合惩戒信息说明"></textarea>
+                    <label>联合惩戒信息说明</label>
+                    <textarea class="form-control" rows="8" placeholder="联合惩戒信息说明" style="width: 85%;"></textarea>
                   </div>
 
                   <div class="form-group" style="margin-top: 20px;">
-                    <label for="statement" class="control-label">发布依据(正式发文的扫描文件)</label>
+                    <label for="statement" class="control-label">发布依据(信息共享发文的文件扫描)</label>
                     <div class="input-group">
                       <div id="statement"/>
                     </div>
@@ -110,33 +108,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                   </div>
 
-
                 </div>
                 <div class="box-footer">
                   <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
-                  <button type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-send"></i> 共享</button>
+                  <button type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-send"></i> 发布</button>
                 </div>
-              </form>
+              </div>
+
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title">信息共享记录</h3>
+                </div>
+                <!-- /.box-header -->
+
+                <div class="box-body">
+
+                  <div id="dataTable"></div>
+
+                </div>
+
+              </div>
+
             </div><!-- jqxWidget -->
-
-            <div class="box box-success">
-              <div class="box-header with-border">
-                <h3 class="box-title">信息共享记录</h3>
-              </div>
-              <!-- /.box-header -->
-
-              <div class="box-body">
-
-                <div id="dataTable"></div>
-
-              </div>
-
-            </div>
-
           </div>
         </div>
 
-      </div>
     </section>
     <!-- /.content -->
   </div>
@@ -146,18 +142,52 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </div>
 <!-- ./wrapper -->
+
 @@include('inc/jslib.html')
-
-
-
 
 <script type="text/javascript">
   $(document).ready(function () {
     // Create jqxTree
     $("#splitter").jqxSplitter({width: 900, height: 600, panels: [{size: 300}, {size: 600}]});
-    $('#jqxTree').jqxTree({height: '100%', width: '100%',checkboxes: true, hasThreeStates: true});
+    $('#jqxTree').jqxTree({height: '100%', width: '100%', hasThreeStates: true, checkboxes: true });
     $('#jqxTree').css('visibility', 'visible');
 
+
+    $('#statement').jqxFileUpload({
+      browseTemplate: 'success',
+      uploadTemplate: 'success',
+      cancelTemplate: 'danger',
+      width: 480,
+      theme: 'office',
+      multipleFilesUpload: false,
+      uploadUrl: 'imageUpload.php',
+      fileInputName: 'statementFile',
+      localization: {
+        browseButton: '选择发布依据',
+        uploadButton: '上传',
+        cancelButton: '取消',
+        uploadFileTooltip: '上传',
+        cancelFileTooltip: '删除'
+      }
+    });
+
+    $('#attachment').jqxFileUpload({
+      browseTemplate: 'success',
+      uploadTemplate: 'success',
+      cancelTemplate: 'danger',
+      width: 480,
+      theme: 'office',
+      multipleFilesUpload: false,
+      uploadUrl: 'imageUpload.php',
+      fileInputName: 'attachmentFile',
+      localization: {
+        browseButton: '选择数据附件',
+        uploadButton: '上传',
+        cancelButton: '取消',
+        uploadFileTooltip: '上传',
+        cancelFileTooltip: '删除'
+      }
+    });
 
     var uploadRecords = [
       {"id": "1", "text": "[市公安局, 市国税局, 市地税局]", "uploadTime": "2016-03-25", "quantity": 2041},
@@ -194,46 +224,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         columns: [
           {text: '序号', datafield: 'id', width: 40},
           {text: '共享对象', datafield: 'text'},
-          {text: '共享时间', datafield: 'uploadTime', width: 100}
+          {text: '发布时间', datafield: 'uploadTime', width: 100}
         ]
       });
 
-    $('#statement').jqxFileUpload({
-      browseTemplate: 'success',
-      uploadTemplate: 'success',
-      cancelTemplate: 'danger',
-      width: 480,
-      theme: 'office',
-      multipleFilesUpload: false,
-      uploadUrl: 'imageUpload.php',
-      fileInputName: 'statementFile',
-      localization: {
-        browseButton: '选择发布依据',
-        uploadButton: '上传',
-        cancelButton: '取消',
-        uploadFileTooltip: '上传',
-        cancelFileTooltip: '删除'
-      }
-    });
-    
 
-    $('#attachment').jqxFileUpload({
-      browseTemplate: 'success',
-      uploadTemplate: 'success',
-      cancelTemplate: 'danger',
-      width: 480,
-      theme: 'office',
-      multipleFilesUpload: false,
-      uploadUrl: 'imageUpload.php',
-      fileInputName: 'attachmentFile',
-      localization: {
-        browseButton: '选择数据附件',
-        uploadButton: '上传',
-        cancelButton: '取消',
-        uploadFileTooltip: '上传',
-        cancelFileTooltip: '删除'
-      }
-    });
   });
 </script>
 
