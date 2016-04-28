@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+
+  <title>数据报送审核 | 武汉征信中心归集系统</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- build:css ../styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
+  <link rel="stylesheet" href="/bower_components/AdminLTE/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.metro.css" type="text/css"/>
+  <link rel="stylesheet" href="/bower_components/intro.js/introjs.css" type="text/css" />
+  <link rel="stylesheet" href="/bower_components/intro.js/themes/introjs-nassim.css" type="text/css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+
+<div id="popover">
+  <table id="table" border="1">
+    <thead>
+    <tr>
+      <th align="left">姓名</th>
+      <th align="left">证件名称</th>
+      <th align="left">证件号码</th>
+      <th align="right">性别</th>
+      <th align="right">认定日期</th>
+      <th align="right">认定文号</th>
+      <th align="right">认定内容</th>
+      <th align="right">职务</th>
+      <th align="right">学历</th>
+      <th align="right">联系电话</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>王学文</td>
+      <td>身份证</td>
+      <td>420102196604130810</td>
+      <td>男</td>
+      <td>2015年8月2日</td>
+      <td>武教文-201509</td>
+      <td>武汉市名校长评审认定</td>
+      <td>校长</td>
+      <td>硕士研究生</td>
+      <td>86728583</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><i class="fa fa-bank"></i></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">信用信息归集系统</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <ul class="nav navbar-nav">
+        <li><a href="./indicator.html"><i class="fa fa-list"></i> 信用目录管理</a></li>
+        <li><a href="./dataupload.html"><i class="fa fa-database"></i> 数据报送管理</a></li>
+        <li><a href="./jointpunishment.html"><i class="fa fa-share-square-o"></i> 信用信息发布</a></li>
+        <!--<li><a href="./product.html"><i class="fa fa-check-square-o"></i> 征信产品定制</a></li>-->
+        <li><a href="./messages.html"><i class="fa fa-gears"></i> 系统管理</a></li>
+      </ul>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <i class="fa fa-user"></i>
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">部门用户(数据报送)</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="./password.html" class="btn btn-default btn-flat">修改密码</a>
+                </div>
+                <div class="pull-right">
+                  <a href="../index.html" class="btn btn-default btn-flat">退出系统</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">数据报送管理功能菜单</li>
+        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送</span></a></li>
+        <li class="active"><a href="./uploadreview.html"><i class="fa fa-check-square-o" style="color: green;"></i> <span>数据报送管理</span></a></li>
+        <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
+        <li><a href="./datastats.html"><i class="fa fa-line-chart" style="color: green;"></i> <span>数据报送统计查询</span></a></li>
+        <li><a href="./dataform.html"><i class="fa fa-upload" style="color: green;"></i> <span>终端数据填报</span></a></li>
+        <li><a href="./objection.html"><i class="fa fa-archive" style="color: green;"></i> <span>异议与差错数据处理</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-line-chart"></i> 数据报送统计查询
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="box box-success">
+        <div class="box-header with-border">
+          <h3 class="box-title">报送数据统计</h3>
+        </div>
+        <div class="box-body">
+          <div id="dataTable"></div>
+
+          <div style="visibility: hidden;" id="dialog">
+            <div>报送处理</div>
+            <div style="overflow: hidden;">
+              <table style="table-layout: fixed; border-style: none;">
+                <tr>
+                  <td colspan="2" align="right">
+                    <br />
+                    <input id="id" type="hidden"/>
+                    <input id="text" type="hidden"/>
+                    <input id="uploadTime" type="hidden"/>
+                    <input id="source" type="hidden"/>
+                    <input id="quantity" type="hidden"/>
+                    <button id="save">审核通过</button> <button style="margin-left: 5px;" id="cancel">打回</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      技术支持 <i class="fa fa-phone-square"></i>027-85766670-407
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 武汉征信中心</strong>
+  </footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- build:js ../scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bower_components/AdminLTE/plugins/iCheck/icheck.min.js"></script>
+<script src="/bower_components/AdminLTE/dist/js/app.js"></script>
+<script type="text/javascript" src="/bower_components/intro.js/intro.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpanel.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtree.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxexpander.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.sort.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.filter.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.selection.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtabs.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.pager.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxfileupload.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxnavbar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/globalization/globalize.culture.zh-CN.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdatatable.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxinput.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxdragdrop.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.edit.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpopover.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxwindow.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var uploadRecords = [
+      { "id": "1",  "text": "[教师资格认定(高中阶段)]", "uploadTime": "2016-03-25", "quantity": 2041 , "status": "待审核", "source": "教师工作处"},
+      { "id": "2",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-03-11", "quantity": 623, "status": "待审核", "source": "高等教育处"},
+      { "id": "3",  "text": "[武汉市名校长评审认定]", "uploadTime": "2016-03-11", "quantity": 549, "status": "待审核", "source": "教师工作处"},
+      { "id": "4",  "text": "[教育系统干部及骨干教师培训认定]", "uploadTime": "2016-03-04", "quantity": 474, "status": "已审核", "source": "高等教育处"},
+      { "id": "5",  "text": "[双公示]", "uploadTime": "2016-02-19", "quantity": 655, "status": "已审核", "source": "基础教育处"},
+      { "id": "6",  "text": "[教育类行政处罚]", "uploadTime": "2016-02-19", "quantity": 1254, "status": "已审核", "source": "教师工作处"},
+      { "id": "7",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-02-19", "quantity": 498, "status": "已审核", "source": "教师工作处"},
+      { "id": "8",  "text": "[优秀青年教师评审认定]", "uploadTime":"2016-02-03", "quantity": 786, "status": "已审核", "source": "教师工作处"},
+      { "id": "9",  "text": "[双公示]", "uploadTime":"2016-02-03", "quantity": 511, "status": "已审核", "source": "高等教育处"},
+      { "id": "10",  "text": "[教育类行政处罚]", "uploadTime": "2016-01-25", "quantity": 702, "status": "已审核", "source": "教师工作处"},
+      { "id": "11",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-01-25", "quantity": 601, "status": "已审核", "source": "教师工作处"},
+      { "id": "12",  "text": "[双公示]", "uploadTime": "2016-01-12", "quantity": 757, "status": "已审核", "source": "基础教育处"},
+      { "id": "13",  "text": "[优秀青年教师评审认定]", "uploadTime":"2016-01-05", "quantity": 1147, "status": "已审核", "source": "教师工作处"},
+      { "id": "14",  "text": "[双公示]", "uploadTime": "2015-12-29", "quantity": 578, "status": "已审核", "source": "高等教育处"},
+      { "id": "15",  "text": "[教育类行政处罚]", "uploadTime": "2015-12-03", "quantity": 903, "status": "已审核", "source": "教师工作处"},
+      { "id": "16",  "text": "[双公示]", "uploadTime": "2015-11-25", "quantity": 808, "status": "已审核", "source": "教师工作处"}
+    ];
+
+
+    var uploadRecordsSource =
+    {
+      localData: uploadRecords,
+      dataType: "json",
+      datafields:
+        [
+          { name: 'id', type: 'string' },
+          { name: 'text', type: 'string' },
+          { name: 'uploadTime', type: 'string' },
+          { name: 'quantity', type: 'number' },
+          { name: 'status', type: 'string' },
+          { name: 'source', type: 'string' }
+        ],
+      updateRow: function (rowid, rowdata, commit) {
+        // synchronize with the server - send update command
+        commit(true);
+      }
+    };
+    var uploadRecordsSourceDA = new $.jqx.dataAdapter(uploadRecordsSource);
+    // initialize jqxDataTable
+    $("#dataTable").jqxDataTable(
+      {
+        width: '100%',
+        source: uploadRecordsSourceDA,
+        altRows: true,
+        pageable: true,
+        pagerButtonsCount: 10,
+        rendering: function()
+        {
+          // destroys all buttons.
+          if ($(".editButtons").length > 0) {
+            $(".editButtons").jqxButton('destroy');
+          }
+        },
+        // called when jqxDataTable is rendered.
+        rendered: function () {
+          if ($(".editButtons").length > 0) {
+            $(".editButtons").jqxButton();
+
+            var editClick = function (event) {
+              var target = $(event.target);
+              // get button's value.
+              var value = target.val();
+              // get clicked row.
+              var rowIndex = parseInt(event.target.getAttribute('data-row'));
+              if (isNaN(rowIndex)) {
+                return;
+              }
+            };
+            $(".editButtons").on('click', function (event) {
+              editClick(event);
+            });
+          }
+        },
+        ready: function () {
+          // called when the DataTable is loaded.
+          // init jqxWindow widgets.
+          $("#save").jqxButton({ height: 30, width: 80 });
+          $("#cancel").jqxButton({ height: 30, width: 80 });
+          $("#cancel").mousedown(function () {
+            // close jqxWindow.
+            $("#dialog").jqxWindow('close');
+            var editRow = parseInt($("#dialog").attr('data-row'));
+            var rowData = {
+              id: $("#id").val(),
+              text: $("#text").val(),
+              source: $("#source").val(),
+              uploadTime: $("#uploadTime").val(),
+              quantity: $("#quantity").val(),
+              status: "已打回"
+            };
+            $("#dataTable").jqxDataTable('updateRow', editRow, rowData);
+          });
+          $("#save").mousedown(function () {
+            // close jqxWindow.
+            $("#dialog").jqxWindow('close');
+            // update edited row.
+            var editRow = parseInt($("#dialog").attr('data-row'));
+            var rowData = {
+              id: $("#id").val(),
+              text: $("#text").val(),
+              source: $("#source").val(),
+              uploadTime: $("#uploadTime").val(),
+              quantity: $("#quantity").val(),
+              status: "已审核"
+            };
+            $("#dataTable").jqxDataTable('updateRow', editRow, rowData);
+          });
+          $("#dialog").on('close', function () {
+            // enable jqxDataTable.
+            $("#dataTable").jqxDataTable({ disabled: false });
+          });
+          $("#dialog").jqxWindow({
+            resizable: false,
+            position: { left: $("#dataTable").offset().left + 75, top: $("#dataTable").offset().top + 35 },
+            width: 270, height: 230,
+            autoOpen: false
+          });
+          $("#dialog").css('visibility', 'visible');
+        },
+        columns: [
+          { text: '序号', datafield: 'id', width: 60 },
+          { text: '信息事项', datafield: 'text' },
+          { text: '报送部门', datafield: 'source' , width: 100 },
+          { text: '报送时间', datafield: 'uploadTime', width: 100 },
+          { text: '报送数据条数', datafield: 'quantity', width: 100, align: 'right', cellsAlign: 'right'},
+          {
+            text: '预览', width: 80, cellsAlign: 'center', align: "center", columnType: 'none', editable: false, sortable: false, dataField: null, cellsRenderer: function (row, column, value) {
+            // render custom column.
+            return "<button data-row='" + row + "' class='editButtons'>预览</button>";
+            }
+          },
+          { text: '处理状态', datafield: 'status', width: 80 ,align: 'right', cellsAlign: 'right'}
+        ]
+      });
+
+    $("#dataTable").on('rowDoubleClick', function (event) {
+      var args = event.args;
+      var index = args.index;
+      var row = args.row;
+      // update the widgets inside jqxWindow.
+      $("#dialog").jqxWindow('setTitle', "报送审核: " + row.id);
+      $("#dialog").jqxWindow('open');
+      $("#dialog").attr('data-row', index);
+      $("#dataTable").jqxDataTable({ disabled: true });
+      $("#id").val(row.id);
+      $("#text").val(row.text);
+      $("#source").val(row.source);
+      $("#uploadTime").val(row.uploadTime);
+      $("#quantity").val(row.quantity);
+    });
+
+    $("#popover").jqxPopover({  isModal: true, showArrow: false,  offset: { left: 0, top: 100 },
+      position: "left", title: "报送数据预览", showCloseButton: true, selector: $(".editButtons")
+    });
+
+  });
+</script>
+
+</body>
+</html>
+
+

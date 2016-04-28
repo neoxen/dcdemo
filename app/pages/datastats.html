@@ -139,7 +139,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">数据报送管理功能菜单</li>
-        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送管理</span></a></li>
+        <li><a href="./dataupload.html"><i class="fa fa-database" style="color: green;"></i> <span>数据报送</span></a></li>
+        <li><a href="./uploadreview.html"><i class="fa fa-check-square-o" style="color: green;"></i> <span>数据报送管理</span></a></li>
         <li><a href="./template.html"><i class="fa fa-file-text" style="color: green;"></i> <span>报送模板管理</span></a></li>
         <li class="active"><a href="./datastats.html"><i class="fa fa-line-chart" style="color: green;"></i> <span>数据报送统计查询</span></a></li>
         <li><a href="./dataform.html"><i class="fa fa-upload" style="color: green;"></i> <span>终端数据填报</span></a></li>
@@ -378,6 +379,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxgrid.edit.js"></script>
 <script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxpopover.js"></script>
+<script type="text/javascript" src="/bower_components/jqwidgets/jqwidgets/jqxwindow.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -387,22 +389,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   $(document).ready(function () {
 
     var uploadRecords = [
-      { "id": "1",  "text": "[教师资格认定(高中阶段)]", "uploadTime": "2016-03-25", "quantity": 2041 },
-      { "id": "2",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-03-11", "quantity": 623},
-      { "id": "3",  "text": "[武汉市名校长评审认定]", "uploadTime": "2016-03-11", "quantity": 549},
-      { "id": "4",  "text": "[教育系统干部及骨干教师培训认定]", "uploadTime": "2016-03-04", "quantity": 474},
-      { "id": "5",  "text": "[双公示]", "uploadTime": "2016-02-19", "quantity": 655},
-      { "id": "6",  "text": "[教育类行政处罚]", "uploadTime": "2016-02-19", "quantity": 1254},
-      { "id": "7",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-02-19", "quantity": 498},
-      { "id": "8",  "text": "[优秀青年教师评审认定]", "uploadTime":"2016-02-03", "quantity": 786},
-      { "id": "9",  "text": "[双公示]", "uploadTime":"2016-02-03", "quantity": 511},
-      { "id": "10",  "text": "[教育类行政处罚]", "uploadTime": "2016-01-25", "quantity": 702},
-      { "id": "11",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-01-25", "quantity": 601},
-      { "id": "12",  "text": "[双公示]", "uploadTime": "2016-01-12", "quantity": 757},
-      { "id": "13",  "text": "[优秀青年教师评审认定]", "uploadTime":"2016-01-05", "quantity": 1147},
-      { "id": "14",  "text": "[双公示]", "uploadTime": "2015-12-29", "quantity": 578},
-      { "id": "15",  "text": "[教育类行政处罚]", "uploadTime": "2015-12-03", "quantity": 903},
-      { "id": "16",  "text": "[双公示]", "uploadTime": "2015-11-25", "quantity": 808}
+      { "id": "1",  "text": "[教师资格认定(高中阶段)]", "uploadTime": "2016-03-25", "quantity": 2041 , "status":"待审核"},
+      { "id": "2",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-03-11", "quantity": 623, "status":"待审核"},
+      { "id": "3",  "text": "[武汉市名校长评审认定]", "uploadTime": "2016-03-11", "quantity": 549, "status":"待审核"},
+      { "id": "4",  "text": "[教育系统干部及骨干教师培训认定]", "uploadTime": "2016-03-04", "quantity": 474, "status":"已报送"},
+      { "id": "5",  "text": "[双公示]", "uploadTime": "2016-02-19", "quantity": 655, "status":"已报送"},
+      { "id": "6",  "text": "[教育类行政处罚]", "uploadTime": "2016-02-19", "quantity": 1254, "status":"已报送"},
+      { "id": "7",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-02-19", "quantity": 498, "status":"已报送"},
+      { "id": "8",  "text": "[优秀青年教师评审认定]", "uploadTime":"2016-02-03", "quantity": 786, "status":"已报送"},
+      { "id": "9",  "text": "[双公示]", "uploadTime":"2016-02-03", "quantity": 511, "status":"已报送"},
+      { "id": "10",  "text": "[教育类行政处罚]", "uploadTime": "2016-01-25", "quantity": 702, "status":"已报送"},
+      { "id": "11",  "text": "[优秀青年教师评审认定]", "uploadTime": "2016-01-25", "quantity": 601, "status":"已报送"},
+      { "id": "12",  "text": "[双公示]", "uploadTime": "2016-01-12", "quantity": 757, "status":"已报送"},
+      { "id": "13",  "text": "[优秀青年教师评审认定]", "uploadTime":"2016-01-05", "quantity": 1147, "status":"已报送"},
+      { "id": "14",  "text": "[双公示]", "uploadTime": "2015-12-29", "quantity": 578, "status":"已报送"},
+      { "id": "15",  "text": "[教育类行政处罚]", "uploadTime": "2015-12-03", "quantity": 903, "status":"已报送"},
+      { "id": "16",  "text": "[双公示]", "uploadTime": "2015-11-25", "quantity": 808, "status":"已报送"}
     ];
 
 
@@ -415,7 +417,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           { name: 'id', type: 'string' },
           { name: 'text', type: 'string' },
           { name: 'uploadTime', type: 'string' },
-          { name: 'quantity', type: 'number' }
+          { name: 'quantity', type: 'number' },
+          { name: 'status', type: 'string' }
         ],
       updateRow: function (rowid, rowdata, commit) {
         // synchronize with the server - send update command
@@ -426,7 +429,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     // initialize jqxDataTable
     $("#dataTable").jqxDataTable(
       {
-        width: 850,
+        width: '100%',
         source: uploadRecordsSourceDA,
         altRows: true,
         pageable: true,
@@ -461,9 +464,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           }
         },
         columns: [
-          { text: '序号', datafield: 'id', width: 90 },
+          { text: '序号', datafield: 'id', width: 40 },
           { text: '信息事项', datafield: 'text' },
-          { text: '报送时间', datafield: 'uploadTime', width: 170 },
+          { text: '报送时间', datafield: 'uploadTime', width: 100 },
           { text: '报送数据条数', datafield: 'quantity', width: 100, align: 'right', cellsAlign: 'right', aggregates: [{
             'Total':
               function (aggregatedValue, currentValue, column, record) {
@@ -478,11 +481,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
           },
           {
-            text: '预览', cellsAlign: 'center', align: "center", columnType: 'none', editable: false, sortable: false, dataField: null, cellsRenderer: function (row, column, value) {
+            text: '预览',width: 60, cellsAlign: 'center', align: "center", columnType: 'none', editable: false, sortable: false, dataField: null, cellsRenderer: function (row, column, value) {
             // render custom column.
             return "<button data-row='" + row + "' class='editButtons'>预览</button>";
           }
-          }
+          },
+          { text: '报送状态', datafield: 'status', width: 80 ,align: 'right', cellsAlign: 'right'}
         ]
       });
 
