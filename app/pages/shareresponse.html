@@ -274,6 +274,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     var codeName = ["/resources/admin/1.doc"];
     var detailEnglishDesc = ["市工商局已读,市国税局已读,市地税局未读"];
     var detailRemark = ["/resources/admin/1.doc"];
+    var status= ["待处理"];
     var notes = ["无"];
 
     var k = 0;
@@ -289,6 +290,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       row["codeName"] = codeName[k];
       row["detailEnglishDesc"] = detailEnglishDesc[k];
       row["detailRemark"] = detailRemark[k];
+      row["status"] = status;
       row["notes"] = notes[k];
       dataIndicatorDetails[i] = row;
       k++;
@@ -360,6 +362,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
           $('#feedbackForm').fadeOut();
           $('#feedbackBtn').val('反馈已发送');
           $("#feedbackBtn").attr('disabled', 'true');
+          var newdata = {
+            'indicatorCodes': "1",
+            'detailCode': "2016-03-04",
+            'detailName': "2016年3月第一批老赖名单",
+            'storeType': "是",
+            'storeLocation': "是",
+            'storeProperty': "/resources/admin/1.doc",
+            'storeFormat': "市中级人民法院",
+            'codeName': "/resources/admin/1.doc",
+            'detailEnglishDesc': "市工商局已读,市国税局已读,市地税局未读",
+            'detailRemark': "/resources/admin/1.doc",
+            'status': "已处理",
+            'notes': "无"
+          };
+          $('#indicatorDetailsGrid').jqxGrid('updaterow', 0, newdata)
         })
       }
     };
@@ -388,7 +405,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           { text: '发布时间', datafield: 'detailCode', width: 100 },
           { text: '信息来源', datafield: 'storeFormat'},
           { text: '要求回执', datafield: 'storeType',width: 100},
-          { text: '要求反馈', datafield: 'storeLocation',width: 100}
+          { text: '要求反馈', datafield: 'storeLocation',width: 100},
+          { text: '处理状态', datafield: 'status',width: 100}
         ]
       });
 
