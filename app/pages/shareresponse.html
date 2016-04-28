@@ -170,7 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="box-footer">
                 <button type="submit" class="btn btn-default"><i class="fa fa-undo"></i> 取消</button>
-                <button type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-share-square-o"></i> 反馈</button>
+                <button id="submitFeedbackBtn" type="submit" class="btn btn-success pull-right" style="margin-left: 5px;"><i class="fa fa-share-square-o"></i> 反馈</button>
               </div>
             </div>
 
@@ -326,23 +326,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         var indicatorCodes = "<div style='margin: 10px;'><b>序号：</b> " + datarecord.indicatorCodes + "</div>";
         var detailName = "<div style='margin: 10px;'><b>信息说明：</b> " + datarecord.detailName + "</div>";
-        var storeType = "<div style='margin: 10px;'><b>要求回执：</b> <button type='button' id='receiptBtn' class='btn btn-sm btn-success'>发送回执</button></div>";
+        var storeType = "<div style='margin: 10px;'><b>要求回执：</b> <input type='button' id='receiptBtn' class='btn btn-sm btn-success' value='发送回执' /></div>";
         var storeProperty = "<div style='margin: 10px;'><b>发布依据：</b><a  href='" + datarecord.storeProperty + "'>点击查看</a></div>";
         $(leftcolumn).append(indicatorCodes);
         $(leftcolumn).append(detailName);
-        $(leftcolumn).append(storeType);
         $(leftcolumn).append(storeProperty);
+        $(leftcolumn).append(storeType);
 
         var detailCode = "<div style='margin: 10px;'><b>发布时间：</b> " + datarecord.detailCode + "</div>";
         var detailEnglishDesc = "<div style='margin: 10px;'><b>信息来源：</b> " + datarecord.storeFormat + "</div>";
-        var storeLocation = "<div style='margin: 10px;'><b>要求执行反馈：</b> <button type='button' id='feedbackBtn' class='btn btn-sm btn-success'>填写执行反馈</button></div>";
+        var storeLocation = "<div style='margin: 10px;'><b>要求执行反馈：</b> <input type='button' id='feedbackBtn' class='btn btn-sm btn-success' value='填写执行反馈' /></div>";
         var codeName = "<div style='margin: 10px;'><b>数据附件：</b><a  href='" + datarecord.codeName + "'>点击查看</a></div>";
         $(rightcolumn).append(detailCode);
         $(rightcolumn).append(detailEnglishDesc);
-        $(rightcolumn).append(storeLocation);
         $(rightcolumn).append(codeName);
+        $(rightcolumn).append(storeLocation);
 
         $(tabsdiv).jqxTabs({ width: 750, height: 180});
+
+
+
+        $("#receiptBtn").on('click', function ()
+        {
+          $("#receiptBtn").val('回执已发送');
+          $("#receiptBtn").attr('disabled', 'true');
+        });
+
+        $('#feedbackBtn').on('click', function() {
+          $('#feedbackForm').fadeIn();
+        });
+
+        $('#submitFeedbackBtn').on('click', function () {
+          $('#feedbackForm').fadeOut();
+          $('#feedbackBtn').val('反馈已发送');
+          $("#feedbackBtn").attr('disabled', 'true');
+        })
       }
     };
 
@@ -374,13 +392,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ]
       });
 
-    $('#receiptBtn').on('click', function(event) {
-      $('#receiptBtn').css('disabled:true;')
-    });
-
-    $('#feedbackBtn').on('click', function(event) {
-      $('#feedbackForm').fadeIn();
-    });
 
 
   });
