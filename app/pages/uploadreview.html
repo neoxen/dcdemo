@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
 <head>
 
-  <title>数据报送审核 | 武汉征信中心归集系统</title>
+  <title>数据报送管理 | 武汉征信中心归集系统</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -37,39 +37,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 <body class="hold-transition skin-green sidebar-mini">
-
-<div id="popover">
-  <table id="table" border="1">
-    <thead>
-    <tr>
-      <th align="left">姓名</th>
-      <th align="left">证件名称</th>
-      <th align="left">证件号码</th>
-      <th align="right">性别</th>
-      <th align="right">认定日期</th>
-      <th align="right">认定文号</th>
-      <th align="right">认定内容</th>
-      <th align="right">职务</th>
-      <th align="right">学历</th>
-      <th align="right">联系电话</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>王学文</td>
-      <td>身份证</td>
-      <td>420102196604130810</td>
-      <td>男</td>
-      <td>2015年8月2日</td>
-      <td>武教文-201509</td>
-      <td>武汉市名校长评审认定</td>
-      <td>校长</td>
-      <td>硕士研究生</td>
-      <td>86728583</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
 
 
 <div class="wrapper">
@@ -156,7 +123,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-line-chart"></i> 数据报送统计查询
+        <i class="fa fa-check-square-o"></i> 数据报送管理
+        <small>双击表格条目进行处理</small>
       </h1>
     </section>
 
@@ -165,24 +133,60 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <div class="box box-success">
         <div class="box-header with-border">
-          <h3 class="box-title">报送数据统计</h3>
+          <h3 class="box-title">数据报送管理</h3>
         </div>
         <div class="box-body">
           <div id="dataTable"></div>
 
           <div style="visibility: hidden;" id="dialog">
             <div>报送处理</div>
-            <div style="overflow: hidden;">
+            <div style="overflow: auto;">
               <table style="table-layout: fixed; border-style: none;">
                 <tr>
-                  <td colspan="2" align="right">
+                  <td>
+                    <span>报送数据预览</span>
+                    <table id="previewTable" border="1">
+                      <thead>
+                      <tr>
+                        <th align="left">姓名</th>
+                        <th align="left">证件名称</th>
+                        <th align="left">证件号码</th>
+                        <th align="right">性别</th>
+                        <th align="right">认定日期</th>
+                        <th align="right">认定文号</th>
+                        <th align="right">认定内容</th>
+                        <th align="right">职务</th>
+                        <th align="right">学历</th>
+                        <th align="right">联系电话</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>王学文</td>
+                        <td>身份证</td>
+                        <td>420102196604130810</td>
+                        <td>男</td>
+                        <td>2015年8月2日</td>
+                        <td>武教文-201509</td>
+                        <td>武汉市名校长评审认定</td>
+                        <td>校长</td>
+                        <td>硕士研究生</td>
+                        <td>86728583</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">
                     <br />
                     <input id="id" type="hidden"/>
                     <input id="text" type="hidden"/>
                     <input id="uploadTime" type="hidden"/>
                     <input id="source" type="hidden"/>
                     <input id="quantity" type="hidden"/>
-                    <button id="save">审核通过</button> <button style="margin-left: 5px;" id="cancel">打回</button></td>
+                    <button id="save">审核通过</button> <button style="margin-left: 5px;" id="cancel">打回</button>
+                  </td>
                 </tr>
               </table>
             </div>
@@ -307,33 +311,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         altRows: true,
         pageable: true,
         pagerButtonsCount: 10,
-        rendering: function()
-        {
-          // destroys all buttons.
-          if ($(".editButtons").length > 0) {
-            $(".editButtons").jqxButton('destroy');
-          }
-        },
-        // called when jqxDataTable is rendered.
-        rendered: function () {
-          if ($(".editButtons").length > 0) {
-            $(".editButtons").jqxButton();
-
-            var editClick = function (event) {
-              var target = $(event.target);
-              // get button's value.
-              var value = target.val();
-              // get clicked row.
-              var rowIndex = parseInt(event.target.getAttribute('data-row'));
-              if (isNaN(rowIndex)) {
-                return;
-              }
-            };
-            $(".editButtons").on('click', function (event) {
-              editClick(event);
-            });
-          }
-        },
         ready: function () {
           // called when the DataTable is loaded.
           // init jqxWindow widgets.
@@ -373,9 +350,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $("#dataTable").jqxDataTable({ disabled: false });
           });
           $("#dialog").jqxWindow({
-            resizable: false,
+            resizable: true,
             position: { left: $("#dataTable").offset().left + 75, top: $("#dataTable").offset().top + 35 },
-            width: 270, height: 230,
+            width: 640, height: 400,
             autoOpen: false
           });
           $("#dialog").css('visibility', 'visible');
@@ -386,12 +363,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           { text: '报送部门', datafield: 'source' , width: 100 },
           { text: '报送时间', datafield: 'uploadTime', width: 100 },
           { text: '报送数据条数', datafield: 'quantity', width: 100, align: 'right', cellsAlign: 'right'},
-          {
-            text: '预览', width: 80, cellsAlign: 'center', align: "center", columnType: 'none', editable: false, sortable: false, dataField: null, cellsRenderer: function (row, column, value) {
-            // render custom column.
-            return "<button data-row='" + row + "' class='editButtons'>预览</button>";
-            }
-          },
           { text: '处理状态', datafield: 'status', width: 80 ,align: 'right', cellsAlign: 'right'}
         ]
       });
@@ -412,9 +383,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       $("#quantity").val(row.quantity);
     });
 
-    $("#popover").jqxPopover({  isModal: true, showArrow: false,  offset: { left: 0, top: 100 },
-      position: "left", title: "报送数据预览", showCloseButton: true, selector: $(".editButtons")
-    });
 
   });
 </script>
